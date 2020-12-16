@@ -1,0 +1,39 @@
+name: Shared Preferences DTX
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "packages/other_packaged/shared_preferences_dtx/**"
+      - ".github/workflows/shared_preferences_dtx.yaml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "packages/other_packaged/shared_preferences_dtx/**"
+      - ".github/workflows/shared_preferences_dtx.yaml"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/other_packaged/shared_preferences_dtx
+    steps:
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v1.4.0
+      - name: Install Dependencies
+        run: flutter packages get
+      - name: Check format
+        run: flutter format --set-exit-if-changed lib test
+      - name: Analyze
+        run: flutter analyze lib test
+      - name: Run tests
+        run: flutter test --no-pub --coverage --test-randomize-ordering-seed random
+      - name: Check Code Coverage
+        uses: ChicagoFlutter/lcov-cop@v1.0.0
+        with:
+          path: coverage/lcov.info
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
