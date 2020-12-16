@@ -1,5 +1,6 @@
-# Shared Preferences DTX
+# shared_preferences_dtx
 
+<a href="https://github.com/kmartins/dtx/actions"><img src="https://github.com/zambiee/dtx/workflows/shared_preferences_dtx/badge.svg" alt="build"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
 
 ⚠️ **None package is not yet in the [pub](https://pub.dev/).**
