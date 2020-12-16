@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: packages/other_packaged/shared_preferences_dtx
+        working-directory: packages/other_packages/shared_preferences_dtx
     steps:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v1.4.0

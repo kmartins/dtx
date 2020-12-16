@@ -5,7 +5,7 @@
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
 </p>
 
-**Its package is not yet in the [pub](https://pub.dev/).**
+⚠️ **Its package is not yet in the [pub](https://pub.dev/).**
 
 This extension package provides easy access to the most commonly used properties, functions, and additional convenience methods that depend on the [BuildContext](https://api.flutter.dev/flutter/widgets/BuildContext-class.html) instance.
 
