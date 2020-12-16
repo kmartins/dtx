@@ -5,13 +5,13 @@ on:
     branches:
       - main
     paths:
-      - "packages/other_packaged/shared_preferences_dtx/**"
+      - "packages/other_packages/shared_preferences_dtx/**"
       - ".github/workflows/shared_preferences_dtx.yaml"
   pull_request:
     branches:
       - main
     paths:
-      - "packages/other_packaged/shared_preferences_dtx/**"
+      - "packages/other_packages/shared_preferences_dtx/**"
       - ".github/workflows/shared_preferences_dtx.yaml"
 
 jobs:
