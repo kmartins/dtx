@@ -1,8 +1,8 @@
 # Flutter Context DTX
 
 <p align="center">
-<a href="https://pub.dev/packages/dtx/packages/flutter/flutter_context_dtx"><img src="https://img.shields.io/pub/v/flutter_context_dtx.svg" alt="Pub"></a>
-  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
+<a href="https://github.com/passsy/dart-lint"><img src="https://img.shields.io/badge/style-lint-40c4ff.svg" alt="style: lint"></a>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
 </p>
 
 ⚠️ **Its package is not yet in the [pub](https://pub.dev/).**
