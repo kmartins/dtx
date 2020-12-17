@@ -8,6 +8,25 @@
 
 This extension package provides easy access to the most commonly used properties, functions, and additional convenience methods that depend on the package [shared_preferences](https://pub.dev/packages/shared_preferences).
 
+# Install
+
+Add it in your `pubspec.yaml`:
+
+```yaml
+dependencies:
+  shared_preferences_dtx:
+    git: 
+      url: git://github.com/Zambiee/dtx.git    
+      ref: shared_preferences_dtx-v1.0.0     
+      path: ./packages/other_packages/shared_preferences_dtx
+```
+
+Import it where you want to use it.
+
+```dart
+import 'package:shared_preferences_dtx/shared_preferences_dtx.dart';
+```
+
 # Extensions
 
 ```dart
@@ -45,23 +64,4 @@ preferences.getBool('bool') ?? false;
 preferences.getInt('int') ?? 0;
 preferences.getDouble('double') ?? 3.9;
 preferences.getStringList('list') ?? <String>[];
-```
-
-# Install
-
-Add it in your `pubspec.yaml`:
-
-```yaml
-dependencies:
-  shared_preferences_dtx:
-    git: 
-      url:  git://github.com/Zambiee/dtx.git    
-      ref: shared_preferences_dtx-v1.0.0     
-      path: ./packages/other_packages/shared_preferences_dtx
-```
-
-Import it where you want to use it.
-
-```dart
-import "package:shared_preferences_dtx/shared_preferences_dtx.dart";
 ```

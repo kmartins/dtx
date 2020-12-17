@@ -17,11 +17,11 @@ Group of the packages that rely on `Dart's extension` to provide easy access for
 
 # Flutter
 
-- [flutter_context_dtx](https://github.com/zambiee/flutter/dtx/flutter_context_dtx)
+- [flutter_context_dtx](https://github.com/Zambiee/dtx/tree/main/packages/flutter/flutter_context_dtx)
 
 # Other Packages
 
-- [shared_preferences_dtx](https://github.com/zambiee/dtx/other_packages/shared_preferences_dtx)
+- [shared_preferences_dtx](https://github.com/Zambiee/dtx/tree/main/packages/other_packages/shared_preferences_dtx)
 
 ## 🤝 Support
 

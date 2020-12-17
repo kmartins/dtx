@@ -11,6 +11,50 @@ This extension package provides easy access to the most commonly used properties
 
 Based on package [build_context](https://github.com/pedromassango/build_context).
 
+# Install
+
+Add it in your `pubspec.yaml`:
+
+```yaml
+dependencies:
+  flutter_context_dtx:
+    git: 
+      url: git://github.com/Zambiee/dtx.git    
+      ref: flutter_context_dtx-v1.0.0     
+      path: ./packages/flutter/flutter_context_dtx
+```
+
+Import it where you want to use it e.g, in your widget's file.
+
+```dart
+import 'package:flutter_context_dtx/flutter_context_dtx.dart';
+```
+
+# Usage
+
+```dart
+import 'package:flutter/material.dart';
+import "package:flutter_context_dtx/flutter_context_dtx.dart";
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: context.scaffoldBackgroundColor, // There is no Theme.of(context)
+      body: Center(
+        child: GestureDetector(
+          onTap: () => context.pushNamed('/detailsPage'), // we use only context not Navigator.of(context)
+          child: Text(
+            'Press Me',
+            style: context.subtitle1Style, // we use only context not Theme.of(context)
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+
 # Available Extensions
 
 ## MediaQuery:
@@ -208,50 +252,6 @@ Based on package [build_context](https://github.com/pedromassango/build_context)
 
 - `context.modalRoute`
 - `context.routeSettings`
-
-# Install
-
-Add it in your `pubspec.yaml`:
-
-```yaml
-dependencies:
-  flutter_context_dtx:
-    git: 
-      url:  git://github.com/Zambiee/dtx.git    
-      ref: flutter_context_dtx-v1.0.0     
-      path: ./packages/flutter/flutter_context_dtx
-```
-
-Import it where you want to use it e.g, in your widget's file.
-
-```dart
-import "package:flutter_context_dtx/flutter_context_dtx.dart";
-```
-
-# Usage
-
-```dart
-import 'package:flutter/material.dart';
-import "package:flutter_context_dtx/flutter_context_dtx.dart";
-
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: context.scaffoldBackgroundColor, // There is no Theme.of(context)
-      body: Center(
-        child: GestureDetector(
-          onTap: () => context.pushNamed('/detailsPage'), // we use only context not Navigator.of(context)
-          child: Text(
-            'Press Me',
-            style: context.subtitle1Style, // we use only context not Theme.of(context)
-          ),
-        ),
-      ),
-    );
-  }
-}
-```
 
 ## 🤝 Support
 
