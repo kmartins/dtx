@@ -215,10 +215,11 @@ Add it in your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  shared_preferences_dtx:
-    git: git@github.com:zambiee/dtx.git
-    ref: flutter_context_dtx-v1.0.0
-    path: /packages/flutter/flutter_context_dtx
+  flutter_context_dtx:
+    git: 
+      url:  git://github.com/Zambiee/dtx.git    
+      ref: flutter_context_dtx-v1.0.0     
+      path: ./packages/flutter/flutter_context_dtx
 ```
 
 Import it where you want to use it e.g, in your widget's file.

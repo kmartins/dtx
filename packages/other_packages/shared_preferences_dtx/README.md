@@ -54,9 +54,10 @@ Add it in your `pubspec.yaml`:
 ```yaml
 dependencies:
   shared_preferences_dtx:
-    git: git@github.com:zambiee/dtx.git
-    ref: shared_preferences_dtx-v1.0.0
-    path: /packages/other_packages/shared_preferences_dtx
+    git: 
+      url:  git://github.com/Zambiee/dtx.git    
+      ref: shared_preferences_dtx-v1.0.0     
+      path: ./packages/other_packages/shared_preferences_dtx
 ```
 
 Import it where you want to use it.
