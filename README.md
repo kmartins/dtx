@@ -2,7 +2,9 @@
 <img src="assets/logo.png" alt="Logo"/>
 </p>
 
+<a href="https://codecov.io/gh/zambiee/dtx"><img src="https://codecov.io/gh/zambiee/dtx/branch/main/graph/badge.svg" alt="codecov"></a>
 <a href="https://github.com/passsy/dart-lint"><img src="https://img.shields.io/badge/style-lint-40c4ff.svg" alt="style: lint"></a>
+<a href="https://github.com/zambiee/dtx"><img src="https://img.shields.io/github/stars/zambiee/dtx.svg?style=flat&logo=github&colorB=deeppink&label=stars" alt="Star on GitHub"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
 
 ⚠️ **None package is not yet in the [pub](https://pub.dev/).**
