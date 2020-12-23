@@ -81,83 +81,83 @@ extension ThemeDtx on BuildContext {
 
   AppBarTheme get appBarTheme => theme.appBarTheme;
 
-  TextStyle get headline1Style => textTheme.headline1;
+  TextStyle get headline1TextStyle => textTheme.headline1;
 
-  TextStyle get headline2Style => textTheme.headline2;
+  TextStyle get headline2TextStyle => textTheme.headline2;
 
-  TextStyle get headline3Style => textTheme.headline3;
+  TextStyle get headline3TextStyle => textTheme.headline3;
 
-  TextStyle get headline4Style => textTheme.headline4;
+  TextStyle get headline4TextStyle => textTheme.headline4;
 
-  TextStyle get headline5Style => textTheme.headline5;
+  TextStyle get headline5TextStyle => textTheme.headline5;
 
-  TextStyle get headline6Style => textTheme.headline6;
+  TextStyle get headline6TextStyle => textTheme.headline6;
 
-  TextStyle get subtitle1Style => textTheme.subtitle1;
+  TextStyle get subtitle1TextStyle => textTheme.subtitle1;
 
-  TextStyle get bodyText1Style => textTheme.bodyText1;
+  TextStyle get bodyText1TextStyle => textTheme.bodyText1;
 
-  TextStyle get bodyText2Style => textTheme.bodyText2;
+  TextStyle get bodyText2TextStyle => textTheme.bodyText2;
 
-  TextStyle get captionStyle => textTheme.caption;
+  TextStyle get captionTextStyle => textTheme.caption;
 
-  TextStyle get buttonStyle => textTheme.button;
+  TextStyle get buttonTextStyle => textTheme.button;
 
-  TextStyle get subtitle2Style => textTheme.subtitle2;
+  TextStyle get subtitle2TextStyle => textTheme.subtitle2;
 
-  TextStyle get overlineStyle => textTheme.overline;
+  TextStyle get overlineTextStyle => textTheme.overline;
 
-  TextStyle get headline1PrimaryStyle => primaryTextTheme.headline1;
+  TextStyle get headline1PrimaryTextStyle => primaryTextTheme.headline1;
 
-  TextStyle get headline2PrimaryStyle => primaryTextTheme.headline2;
+  TextStyle get headline2PrimaryTextStyle => primaryTextTheme.headline2;
 
-  TextStyle get headline3PrimaryStyle => primaryTextTheme.headline3;
+  TextStyle get headline3PrimaryTextStyle => primaryTextTheme.headline3;
 
-  TextStyle get headline4PrimaryStyle => primaryTextTheme.headline4;
+  TextStyle get headline4PrimaryTextStyle => primaryTextTheme.headline4;
 
-  TextStyle get headline5PrimaryStyle => primaryTextTheme.headline5;
+  TextStyle get headline5PrimaryTextStyle => primaryTextTheme.headline5;
 
-  TextStyle get headline6PrimaryStyle => primaryTextTheme.headline6;
+  TextStyle get headline6PrimaryTextStyle => primaryTextTheme.headline6;
 
-  TextStyle get subtitle1PrimaryStyle => primaryTextTheme.subtitle1;
+  TextStyle get subtitle1PrimaryTextStyle => primaryTextTheme.subtitle1;
 
-  TextStyle get bodyText1PrimaryStyle => primaryTextTheme.bodyText1;
+  TextStyle get bodyText1PrimaryTextStyle => primaryTextTheme.bodyText1;
 
-  TextStyle get bodyText2PrimaryStyle => primaryTextTheme.bodyText2;
+  TextStyle get bodyText2PrimaryTextStyle => primaryTextTheme.bodyText2;
 
-  TextStyle get captionPrimaryStyle => primaryTextTheme.caption;
+  TextStyle get captionPrimaryTextStyle => primaryTextTheme.caption;
 
-  TextStyle get buttonPrimaryStyle => primaryTextTheme.button;
+  TextStyle get buttonPrimaryTextStyle => primaryTextTheme.button;
 
-  TextStyle get subtitle2PrimaryStyle => primaryTextTheme.subtitle2;
+  TextStyle get subtitle2PrimaryTextStyle => primaryTextTheme.subtitle2;
 
-  TextStyle get overlinePrimaryStyle => primaryTextTheme.overline;
+  TextStyle get overlinePrimaryTextStyle => primaryTextTheme.overline;
 
-  TextStyle get headline1AccentStyle => accentTextTheme.headline1;
+  TextStyle get headline1AccentTextStyle => accentTextTheme.headline1;
 
-  TextStyle get headline2AccentStyle => accentTextTheme.headline2;
+  TextStyle get headline2AccentTextStyle => accentTextTheme.headline2;
 
-  TextStyle get headline3AccentStyle => accentTextTheme.headline3;
+  TextStyle get headline3AccentTextStyle => accentTextTheme.headline3;
 
-  TextStyle get headline4AccentStyle => accentTextTheme.headline4;
+  TextStyle get headline4AccentTextStyle => accentTextTheme.headline4;
 
-  TextStyle get headline5AccentStyle => accentTextTheme.headline5;
+  TextStyle get headline5AccentTextStyle => accentTextTheme.headline5;
 
-  TextStyle get headline6AccentStyle => accentTextTheme.headline6;
+  TextStyle get headline6AccentTextStyle => accentTextTheme.headline6;
 
-  TextStyle get subtitle1AccentStyle => accentTextTheme.subtitle1;
+  TextStyle get subtitle1AccentTextStyle => accentTextTheme.subtitle1;
 
-  TextStyle get bodyText1AccentStyle => accentTextTheme.bodyText1;
+  TextStyle get bodyText1AccentTextStyle => accentTextTheme.bodyText1;
 
-  TextStyle get bodyText2AccentStyle => accentTextTheme.bodyText2;
+  TextStyle get bodyText2AccentTextStyle => accentTextTheme.bodyText2;
 
-  TextStyle get captionAccentStyle => accentTextTheme.caption;
+  TextStyle get captionAccentTextStyle => accentTextTheme.caption;
 
-  TextStyle get buttonAccentStyle => accentTextTheme.button;
+  TextStyle get buttonAccentTextStyle => accentTextTheme.button;
 
-  TextStyle get subtitle2AccentStyle => accentTextTheme.subtitle2;
+  TextStyle get subtitle2AccentTextStyle => accentTextTheme.subtitle2;
 
-  TextStyle get overlineAccentStyle => accentTextTheme.overline;
+  TextStyle get overlineAccentTextStyle => accentTextTheme.overline;
 
   TargetPlatform get platform => theme.platform;
 
