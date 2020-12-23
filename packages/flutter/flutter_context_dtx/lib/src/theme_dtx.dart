@@ -13,6 +13,34 @@ extension ThemeDtx on BuildContext {
 
   TextTheme get accentTextTheme => theme.accentTextTheme;
 
+  ColorScheme get colorScheme => theme.colorScheme;
+
+  Color get colorSchemePrimary => colorScheme.primary;
+
+  Color get colorSchemePrimaryVariant => colorScheme.primaryVariant;
+
+  Color get colorSchemeSecondary => colorScheme.secondary;
+
+  Color get colorSchemeSecondaryVariant => colorScheme.secondaryVariant;
+
+  Color get colorSchemeSurface => colorScheme.surface;
+
+  Color get colorSchemeBackground => colorScheme.background;
+
+  Color get colorSchemeError => colorScheme.error;
+
+  Color get colorSchemeOnPrimary => colorScheme.onPrimary;
+
+  Color get colorSchemeOnSecondary => colorScheme.onSecondary;
+
+  Color get colorSchemeOnBackground => colorScheme.onBackground;
+
+  Color get colorSchemeOnSurface => colorScheme.onSurface;
+
+  Color get colorSchemeOnError => colorScheme.onError;
+
+  Brightness get colorSchemeBrightness => colorScheme.brightness;
+
   BottomAppBarTheme get bottomAppBarTheme => theme.bottomAppBarTheme;
 
   BottomSheetThemeData get bottomSheetTheme => theme.bottomSheetTheme;
