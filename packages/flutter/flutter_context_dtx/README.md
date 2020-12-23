@@ -20,7 +20,7 @@ dependencies:
   flutter_context_dtx:
     git: 
       url: git://github.com/Zambiee/dtx.git    
-      ref: flutter_context_dtx-v1.0.0     
+      ref: flutter_context_dtx-v1.1.1
       path: ./packages/flutter/flutter_context_dtx
 ```
 
