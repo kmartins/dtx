@@ -17,7 +17,7 @@ class _FocusScope {
 
   void nextFocus() => _node().nextFocus();
 
-  void requestFocus([FocusNode node]) => _node().requestFocus(node);
+  void requestFocus([FocusNode? node]) => _node().requestFocus(node);
 
   void previousFocus() => _node().previousFocus();
 

@@ -5,13 +5,13 @@ class _Form {
 
   final BuildContext _context;
 
-  FormState get _formState => Form.of(_context);
+  FormState? get _formState => Form.of(_context);
 
-  bool validate() => _formState.validate();
+  bool? validate() => _formState?.validate();
 
-  void reset() => _formState.reset();
+  void reset() => _formState?.reset();
 
-  void save() => _formState.save();
+  void save() => _formState?.save();
 }
 
 ///

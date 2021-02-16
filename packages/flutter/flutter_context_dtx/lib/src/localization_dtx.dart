@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 extension LocalizationDtx on BuildContext {
   Locale get locale => Localizations.localeOf(this);
 
-  String get countryCode => locale.countryCode;
+  String? get countryCode => locale.countryCode;
 
   String get languageCode => locale.languageCode;
 }

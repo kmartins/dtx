@@ -3,7 +3,7 @@ import 'package:shared_preferences_dtx/shared_preferences_dtx.dart';
 
 void main() {
   group('SharedPreferencesExtensions', () {
-    SharedPreferences preferences;
+    late SharedPreferences preferences;
 
     setUp(() async {
       SharedPreferences.setMockInitialValues({});
@@ -13,13 +13,13 @@ void main() {
     tearDown(() => preferences.clear());
 
     test('reading default value', () {
-      expect(preferences.getValue<String>('String', defaultValue: 'String'),
+      expect(preferences.getOrElse<String>('String', defaultValue: 'String'),
           'String');
-      expect(preferences.getValue<bool>('bool', defaultValue: false), false);
-      expect(preferences.getValue<int>('int', defaultValue: 2), 2);
-      expect(preferences.getValue<double>('double', defaultValue: 2.5), 2.5);
+      expect(preferences.getOrElse<bool>('bool', defaultValue: false), false);
+      expect(preferences.getOrElse<int>('int', defaultValue: 2), 2);
+      expect(preferences.getOrElse<double>('double', defaultValue: 2.5), 2.5);
       expect(
-          preferences.getValue<List<String>>('list',
+          preferences.getOrElse<List<String>>('list',
               defaultValue: <String>['foo', 'bar']),
           <String>['foo', 'bar']);
     });
@@ -50,11 +50,11 @@ void main() {
         preferences.setValue('list', <String>['foo', 'bar']),
       ]);
 
-      expect(preferences.getValue('String', defaultValue: 'Valor'), 'String');
-      expect(preferences.getValue('bool', defaultValue: false), isFalse);
-      expect(preferences.getValue('int', defaultValue: 0), 2);
-      expect(preferences.getValue('double', defaultValue: 3.9), 2.5);
-      expect(preferences.getValue('list', defaultValue: <String>[]),
+      expect(preferences.getOrElse('String', defaultValue: 'test'), 'String');
+      expect(preferences.getOrElse('bool', defaultValue: true), false);
+      expect(preferences.getOrElse('int', defaultValue: 10), 2);
+      expect(preferences.getOrElse('double', defaultValue: 12.5), 2.5);
+      expect(preferences.getOrElse('list', defaultValue: <String>['foo']),
           <String>['foo', 'bar']);
     });
 
@@ -65,6 +65,11 @@ void main() {
       );
       expect(
         () => preferences.getValue<SharedPreferences>('value'),
+        throwsArgumentError,
+      );
+      expect(
+        () => preferences.getOrElse<SharedPreferences>('value',
+            defaultValue: preferences),
         throwsArgumentError,
       );
       expect(
@@ -80,17 +85,6 @@ void main() {
       expect(
         () => preferences.setValue<dynamic>('preferences', preferences),
         throwsArgumentError,
-      );
-    });
-
-    test('throwing exception with null key', () {
-      expect(
-        () => preferences.setValue<int>(null, 2),
-        throwsAssertionError,
-      );
-      expect(
-        () => preferences.getValue<int>(null),
-        throwsAssertionError,
       );
     });
   });

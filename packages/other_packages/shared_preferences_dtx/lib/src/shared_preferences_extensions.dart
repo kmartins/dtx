@@ -8,22 +8,41 @@ extension SharedPreferencesExt on SharedPreferences {
 
   /// Reads a value, throwing an exception if it's not a
   /// double, int, string, bool or List<String>.
-  ///
-  /// If the value is null, return the [defaultValue]
-  T getValue<T>(String key, {T defaultValue}) {
-    assert(key != null, 'Preference key must not be null.');
+  T? getValue<T>(String key) {
     assert(T != dynamic,
         'Incompatible dynamic type - Use only double, int, String, bool or List<String>');
     if (T == double) {
-      return getDouble(key) as T ?? defaultValue;
+      return getDouble(key) as T?;
     } else if (T == int) {
-      return getInt(key) as T ?? defaultValue;
+      return getInt(key) as T?;
     } else if (T == String) {
-      return getString(key) as T ?? defaultValue;
+      return getString(key) as T?;
     } else if (_typeOf<List<String>>() == T) {
-      return getStringList(key) as T ?? defaultValue;
+      return getStringList(key) as T?;
     } else if (T == bool) {
-      return getBool(key) as T ?? defaultValue;
+      return getBool(key) as T?;
+    }
+    throw ArgumentError(
+        'Incompatible preference type - Use only double, int, String, bool or List<String>');
+  }
+
+  /// Reads a value, throwing an exception if it's not a
+  /// double, int, string, bool or List<String>.
+  ///
+  /// If the value is null, return the [defaultValue]
+  T getOrElse<T>(String key, {required T defaultValue}) {
+    assert(T != dynamic,
+        'Incompatible dynamic type - Use only double, int, String, bool or List<String>');
+    if (T == double) {
+      return getDouble(key) as T? ?? defaultValue;
+    } else if (T == int) {
+      return getInt(key) as T? ?? defaultValue;
+    } else if (T == String) {
+      return getString(key) as T? ?? defaultValue;
+    } else if (_typeOf<List<String>>() == T) {
+      return getStringList(key) as T? ?? defaultValue;
+    } else if (T == bool) {
+      return getBool(key) as T? ?? defaultValue;
     }
     throw ArgumentError(
         'Incompatible preference type - Use only double, int, String, bool or List<String>');
@@ -32,7 +51,6 @@ extension SharedPreferencesExt on SharedPreferences {
   /// Writes a value, throwing an exception if it's not a
   /// double, int, string, bool or List<String>.
   Future<bool> setValue<T>(String key, T value) {
-    assert(key != null, 'Preference key must not be null.');
     if (value is List<String>) {
       return setStringList(key, value);
     } else if (value is double) {

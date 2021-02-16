@@ -6,7 +6,10 @@ import 'package:flutter/material.dart';
 extension ScaffoldDtx on BuildContext {
   ScaffoldState get scaffoldState => Scaffold.of(this);
 
-  double get appBarMaxHeight => scaffoldState.appBarMaxHeight;
+  ScaffoldMessengerState get scaffoldMessengerState =>
+      ScaffoldMessenger.of(this);
+
+  double? get appBarMaxHeight => scaffoldState.appBarMaxHeight;
 
   bool get hasAppBar => scaffoldState.hasAppBar;
 
@@ -21,22 +24,22 @@ extension ScaffoldDtx on BuildContext {
   bool get isEndDrawerOpen => scaffoldState.isEndDrawerOpen;
 
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSnackBar(
-    SnackBar snackbar, {
+    SnackBar snackBar, {
     bool hideCurrent = true,
   }) {
     if (hideCurrent) {
       hideCurrentSnackBar();
     }
-    return scaffoldState.showSnackBar(snackbar);
+    return scaffoldMessengerState.showSnackBar(snackBar);
   }
 
   void removeCurrentSnackBar(
           {SnackBarClosedReason reason = SnackBarClosedReason.remove}) =>
-      scaffoldState.removeCurrentSnackBar(reason: reason);
+      scaffoldMessengerState.removeCurrentSnackBar(reason: reason);
 
   void hideCurrentSnackBar(
           {SnackBarClosedReason reason = SnackBarClosedReason.hide}) =>
-      scaffoldState.hideCurrentSnackBar(reason: reason);
+      scaffoldMessengerState.hideCurrentSnackBar(reason: reason);
 
   void openDrawer() => scaffoldState.openDrawer();
 
@@ -44,16 +47,16 @@ extension ScaffoldDtx on BuildContext {
 
   void showBottomSheet(
     WidgetBuilder builder, {
-    Color backgroundColor,
-    double elevation,
-    ShapeBorder shape,
-    Clip clipBehaviour,
+    Color? backgroundColor,
+    double? elevation,
+    ShapeBorder? shape,
+    Clip? clipBehavior,
   }) =>
       scaffoldState.showBottomSheet(
         builder,
         backgroundColor: backgroundColor,
         elevation: elevation,
         shape: shape,
-        clipBehavior: clipBehaviour,
+        clipBehavior: clipBehavior,
       );
 }

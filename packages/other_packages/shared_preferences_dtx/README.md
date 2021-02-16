@@ -40,11 +40,18 @@ preferences.setValue('double', 2.5),
 preferences.setValue('list', <String>['foo', 'bar']),
 
 // get value
-preferences.getValue('String', defaultValue: 'value');
-preferences.getValue('bool', defaultValue: false);
-preferences.getValue('int', defaultValue: 0);
-preferences.getValue('double', defaultValue: 3.9);
-preferences.getValue('list', defaultValue: <String>[]);
+preferences.getValue<String>('String');
+preferences.getValue<bool>('bool');
+preferences.getValue<int>('int');
+preferences.getValue<double>('double');
+preferences.getValue<List<String>>('list');
+
+// get value or else
+preferences.getOrElse('String', defaultValue: 'value');
+preferences.getOrElse('bool', defaultValue: false);
+preferences.getOrElse('int', defaultValue: 0);
+preferences.getOrElse('double', defaultValue: 3.9);
+preferences.getOrElse('list', defaultValue: <String>[]);
 ```
 
 **Before:**

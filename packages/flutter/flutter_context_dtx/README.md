@@ -126,7 +126,6 @@ class MyHomePage extends StatelessWidget {
 - `context.cardTheme`
 - `context.tabBarTheme`
 - `context.dialogTheme`
-- `context.shadowTheme`
 - `context.themeBrightness`
 - `context.isDarkBrightness`
 - `context.isLightBrightness`

@@ -9,17 +9,17 @@ homepage: https://github.com/zambiee/dtx/other_packages/shared_preferences_dtx
 documentation: https://github.com/zambiee/dtx/other_packages/shared_preferences_dtx
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.17.0 <2.0.0"
+  sdk: ">=2.12.0-0 <3.0.0"    
+  flutter: ">=1.26.0-0 <2.0.0"
 
-dependencies:
-  shared_preferences: ^0.5.12+4
+dependencies:  
   flutter:
     sdk: flutter
+  shared_preferences: ^2.0.0-nullsafety
 
-dev_dependencies:
-  lint: ^1.0.0
+dev_dependencies:  
   flutter_test:
     sdk: flutter
+  lint: ^1.5.1
 
 flutter:
