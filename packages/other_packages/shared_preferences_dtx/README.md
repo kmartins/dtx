@@ -33,11 +33,11 @@ import 'package:shared_preferences_dtx/shared_preferences_dtx.dart';
 final preferences = await SharedPreferences.getInstance();
 
 // set value
-preferences.setValue('String', 'String'),
-preferences.setValue('bool', false),
-preferences.setValue('int', 2),
-preferences.setValue('double', 2.5),
-preferences.setValue('list', <String>['foo', 'bar']),
+await preferences.setValue('String', 'String'),
+await preferences.setValue('bool', false),
+await preferences.setValue('int', 2),
+await preferences.setValue('double', 2.5),
+await preferences.setValue('list', <String>['foo', 'bar']),
 
 // get value
 preferences.getValue<String>('String');
@@ -59,11 +59,11 @@ preferences.getOrElse('list', defaultValue: <String>[]);
 final preferences = await SharedPreferences.getInstance();
 
 // set value
-preferences.setString('String', 'String'),
-preferences.setBool('bool', false),
-preferences.setInt('int', 2),
-preferences.setDouble('double', 2.5),
-preferences.setStringList('list', <String>['foo', 'bar']),
+await preferences.setString('String', 'String'),
+await preferences.setBool('bool', false),
+await preferences.setInt('int', 2),
+await preferences.setDouble('double', 2.5),
+await preferences.setStringList('list', <String>['foo', 'bar']),
 
 // get value
 preferences.getString('String') ?? 'value';
@@ -71,4 +71,35 @@ preferences.getBool('bool') ?? false;
 preferences.getInt('int') ?? 0;
 preferences.getDouble('double') ?? 3.9;
 preferences.getStringList('list') ?? <String>[];
+```
+
+# New Preferences
+
+```dart
+// set value
+await preferences.setValue('color', Colors.black);
+await preferences.setValue('theme_mode', ThemeMode.dark);
+await preferences.setValue('user', {'name': 'user', 'age': 20});
+
+// get value
+preferences.getValue<Color>('color');
+preferences.getValue<ThemeMode>('theme_mode');
+preferences.getValue<Map<String, dynamic>>('user');
+
+// get value or else
+preferences.getOrElse('color', defaultValue: Colors.black);
+preferences.getOrElse('theme_mode', defaultValue: ThemeMode.dark);
+preferences.getOrElse('user', defaultValue:  {'name': 'user', 'age': 20});
+```
+or 
+```dart
+// set value
+await preferences.setColor('color', Colors.black);
+await preferences.setThemeMode('theme_mode', ThemeMode.dark);
+await preferences.setJson('user', {'name': 'user', 'age': 20});
+
+// get value
+preferences.getColor('color') ?? Colors.black;
+preferences.getThemeMode('theme_mode') ?? ThemeMode.light;
+preferences.getJson('user') ?? {'name': 'user', 'age': 20};
 ```
