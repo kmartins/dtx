@@ -4,8 +4,6 @@
 <a href="https://github.com/passsy/dart-lint"><img src="https://img.shields.io/badge/style-lint-40c4ff.svg" alt="style: lint"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
 
-⚠️ **None package is not yet in the [pub](https://pub.dev/).**
-
 This extension package provides easy access to the most commonly used properties, functions, and additional convenience methods that depend on the package [shared_preferences](https://pub.dev/packages/shared_preferences).
 
 # Install
@@ -15,10 +13,6 @@ Add it in your `pubspec.yaml`:
 ```yaml
 dependencies:
   shared_preferences_dtx:
-    git: 
-      url: git://github.com/Zambiee/dtx.git    
-      ref: shared_preferences_dtx-v1.0.0     
-      path: ./packages/other_packages/shared_preferences_dtx
 ```
 
 Import it where you want to use it.
