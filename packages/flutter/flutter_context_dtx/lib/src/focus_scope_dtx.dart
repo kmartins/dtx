@@ -36,4 +36,8 @@ extension FocusScopeDtx on BuildContext {
   _FocusScope get focusScope => _FocusScope(this);
 
   void hideKeyboard() => focusScope.requestFocus(FocusNode());
+
+  FocusOrder get focusTraversalOrder => FocusTraversalOrder.of(this);
+
+  FocusTraversalPolicy get focusTraversalPolicy => FocusTraversalGroup.of(this);
 }

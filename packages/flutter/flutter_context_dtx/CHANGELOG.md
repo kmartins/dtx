@@ -1,6 +1,7 @@
-## [1.2.0] - 15/02/2021
+## [1.2.0] - 04/02/2021
 
 - Null safety.
+- Added new extensions.
 ## [1.1.1] - 23/12/2020
 
 - Added extensions for the `ColorScheme` of the `Theme`.

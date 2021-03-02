@@ -55,6 +55,18 @@ extension ThemeDtx on BuildContext {
 
   SliderThemeData get sliderTheme => theme.sliderTheme;
 
+  TooltipThemeData get tooltipTheme => theme.tooltipTheme;
+
+  ToggleButtonsThemeData get toggleButtonsTheme => theme.toggleButtonsTheme;
+
+  NavigationRailThemeData get navigationRailTheme => theme.navigationRailTheme;
+
+  ButtonThemeData get buttonTheme => theme.buttonTheme;
+
+  IconThemeData get iconTheme => theme.iconTheme;
+
+  ListTileTheme get listTileTheme => ListTileTheme.of(this);
+
   CardTheme get cardTheme => theme.cardTheme;
 
   TabBarTheme get tabBarTheme => theme.tabBarTheme;
@@ -76,6 +88,10 @@ extension ThemeDtx on BuildContext {
   Color get canvasColor => theme.canvasColor;
 
   Color get scaffoldBackgroundColor => theme.scaffoldBackgroundColor;
+
+  Color get dividerColor => theme.dividerColor;
+
+  Color get disabledColor => theme.disabledColor;
 
   AppBarTheme get appBarTheme => theme.appBarTheme;
 
@@ -156,6 +172,10 @@ extension ThemeDtx on BuildContext {
   TextStyle? get subtitle2AccentTextStyle => accentTextTheme.subtitle2;
 
   TextStyle? get overlineAccentTextStyle => accentTextTheme.overline;
+
+  DefaultTextStyle get defaultTextStyle => DefaultTextStyle.of(this);
+
+  TextDirection get textDirection => Directionality.of(this);
 
   TargetPlatform get platform => theme.platform;
 
