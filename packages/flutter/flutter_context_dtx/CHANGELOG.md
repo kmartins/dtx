@@ -1,4 +1,4 @@
-## [1.2.0] - 04/02/2021
+## [1.3.0] - 03/03/2021
 
 - Null safety.
 - Added new extensions.

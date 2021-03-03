@@ -1,5 +1,6 @@
 # shared_preferences_dtx
 
+<a href="https://pub.dev/packages/shared_preferences_dtx"><img src="https://img.shields.io/pub/v/shared_preferences_dtx.svg" alt="Pub"></a>
 <a href="https://github.com/zambiee/dtx/actions"><img src="https://github.com/Zambiee/dtx/workflows/Shared%20Preferences%20DTX/badge.svg" alt="build"></a>
 <a href="https://github.com/passsy/dart-lint"><img src="https://img.shields.io/badge/style-lint-40c4ff.svg" alt="style: lint"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
@@ -97,3 +98,8 @@ preferences.getColor('color') ?? Colors.black;
 preferences.getThemeMode('theme_mode') ?? ThemeMode.light;
 preferences.getJson('user') ?? {'name': 'user', 'age': 20};
 ```
+
+## 📝 License
+
+Copyright © 2021 [Zambiee](https://github.com/Zambiee).<br />
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.

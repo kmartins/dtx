@@ -1,4 +1,4 @@
-## [1.0.0] - 16/02/2021
+## [1.0.0] - 03/03/2021
 
 - Null Safety
 - Add new preferences: Color, Map<String, dynamic> and ThemeMode.
