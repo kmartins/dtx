@@ -1,11 +1,10 @@
 # Flutter Context DTX
 
 <p align="center">
+<a href="https://pub.dev/packages/flutter_context_dtx"><img src="https://img.shields.io/pub/v/flutter_context_dtx.svg" alt="Pub"></a>
 <a href="https://github.com/passsy/dart-lint"><img src="https://img.shields.io/badge/style-lint-40c4ff.svg" alt="style: lint"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
 </p>
-
-⚠️ **Its package is not yet in the [pub](https://pub.dev/).**
 
 This extension package provides easy access to the most commonly used properties, functions, and additional convenience methods that depend on the [BuildContext](https://api.flutter.dev/flutter/widgets/BuildContext-class.html) instance.
 
@@ -18,10 +17,6 @@ Add it in your `pubspec.yaml`:
 ```yaml
 dependencies:
   flutter_context_dtx:
-    git: 
-      url: git://github.com/Zambiee/dtx.git    
-      ref: flutter_context_dtx-v1.1.1
-      path: ./packages/flutter/flutter_context_dtx
 ```
 
 Import it where you want to use it e.g, in your widget's file.
@@ -126,7 +121,6 @@ class MyHomePage extends StatelessWidget {
 - `context.cardTheme`
 - `context.tabBarTheme`
 - `context.dialogTheme`
-- `context.shadowTheme`
 - `context.themeBrightness`
 - `context.isDarkBrightness`
 - `context.isLightBrightness`
@@ -135,7 +129,15 @@ class MyHomePage extends StatelessWidget {
 - `context.buttonColor`
 - `context.canvasColor`
 - `context.scaffoldBackgroundColor`
+- `context.dividerColor`
+- `context.disabledColor`
 - `context.appBarTheme`
+- `context.tooltipTheme`
+- `context.toggleButtonsTheme`
+- `context.navigationRailTheme`
+- `context.buttonTheme`
+- `context.iconTheme`
+- `context.listTileTheme`
 
 - `context.headline1TextStyle`
 - `context.headline2TextStyle`
@@ -176,6 +178,8 @@ class MyHomePage extends StatelessWidget {
 - `context.buttonAccentTextStyle`
 - `context.subtitle2AccentTextStyle`
 - `context.overlineAccentTextStyle`
+- `context.defaultTextStyle`
+- `context.textDirection`
   
 - `context.colorScheme`
 - `context.colorSchemePrimary`
@@ -251,6 +255,8 @@ class MyHomePage extends StatelessWidget {
 - `context.focusScope.setFirstFocus()`
 - `context.focusScope.consumeKeyboardToken()`
 - `context.closeKeyboard()`
+- `context.focusTraversalOrder`
+- `context.focusTraversalPolicy`
 
 ## Overlay:
 
@@ -262,11 +268,31 @@ class MyHomePage extends StatelessWidget {
 - `context.locale`
 - `context.countryCode`
 - `context.languageCode`
+- `context.materialLocalizations`
+- `context.widgetsLocalizations`
 
 ## ModalRoute:
 
 - `context.modalRoute`
 - `context.routeSettings`
+- `context.args<String>()`
+
+## Controller:
+
+- `context.tabController`
+- `context.materialInkController`
+- `context.primaryScrollController`
+
+## Others:
+
+- `context.pageStorage`
+- `context.scrollBehavior`
+- `context.scrollable`
+- `context.actions`
+- `context.animatedList`
+- `context.defaultAssetBundle`
+- `context.sliverAnimatedList`
+- `context.tickingEnabled`
 
 ## 🤝 Support
 
@@ -284,5 +310,5 @@ You liked this package? Then give it a ⭐️. If you want to help then:
 
 ## 📝 License
 
-Copyright © 2020 [Zambiee](https://github.com/Zambiee).<br />
+Copyright © 2021 [Zambiee](https://github.com/Zambiee).<br />
 This project is [MIT](https://opensource.org/licenses/MIT) licensed.

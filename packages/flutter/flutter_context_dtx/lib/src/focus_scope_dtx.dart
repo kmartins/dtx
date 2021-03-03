@@ -17,7 +17,7 @@ class _FocusScope {
 
   void nextFocus() => _node().nextFocus();
 
-  void requestFocus([FocusNode node]) => _node().requestFocus(node);
+  void requestFocus([FocusNode? node]) => _node().requestFocus(node);
 
   void previousFocus() => _node().previousFocus();
 
@@ -36,4 +36,8 @@ extension FocusScopeDtx on BuildContext {
   _FocusScope get focusScope => _FocusScope(this);
 
   void hideKeyboard() => focusScope.requestFocus(FocusNode());
+
+  FocusOrder get focusTraversalOrder => FocusTraversalOrder.of(this);
+
+  FocusTraversalPolicy get focusTraversalPolicy => FocusTraversalGroup.of(this);
 }

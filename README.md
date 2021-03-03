@@ -7,8 +7,6 @@
 <a href="https://github.com/zambiee/dtx"><img src="https://img.shields.io/github/stars/zambiee/dtx.svg?style=flat&logo=github&colorB=deeppink&label=stars" alt="Star on GitHub"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-purple.svg" alt="License: MIT"></a>
 
-⚠️ **None package is not yet in the [pub](https://pub.dev/).**
-
 Group of the packages that rely on `Dart's extension` to provide easy access for the most used properties, functions, and additional convenience methods both in **Dart** (e.g: [String](https://api.dart.dev/stable/2.10.0/dart-core/String-class.html)), **Flutter** (e.g: [BuildContext](https://api.flutter.dev/flutter/widgets/BuildContext-class.html)), and **other packages** (e.g: [Shared Preferences](https://pub.dev/packages/shared_preferences)).
 
 # Dart
@@ -17,11 +15,20 @@ Group of the packages that rely on `Dart's extension` to provide easy access for
 
 # Flutter
 
-- [flutter_context_dtx](https://github.com/Zambiee/dtx/tree/main/packages/flutter/flutter_context_dtx)
+| Name  |  Class  |   Pub Dev     |
+| ------------------- | ------------------- |------------------- |
+| [flutter_context_dtx](https://github.com/Zambiee/dtx/tree/main/packages/flutter/flutter_context_dtx) |  [BuildContext](https://api.flutter.dev/flutter/widgets/BuildContext-class.html) | <a href="https://pub.dev/packages/flutter_context_dtx"><img src="https://img.shields.io/pub/v/flutter_context_dtx.svg" alt="Pub"></a> |
 
 # Other Packages
 
-- [shared_preferences_dtx](https://github.com/Zambiee/dtx/tree/main/packages/other_packages/shared_preferences_dtx)
+| Name  |  Package  |   Pub Dev     |
+| ------------------- | ------------------- |------------------- |
+| [shared_preferences_dtx](https://github.com/Zambiee/dtx/tree/main/packages/other_packages/shared_preferences_dtx) |  [shared_preferences](https://pub.dev/packages/shared_preferences) | <a href="https://pub.dev/packages/shared_preferences_dtx"><img src="https://img.shields.io/pub/v/shared_preferences_dtx.svg" alt="Pub"></a> |
+
+
+## 📝 Maintainers
+
+[Zambiee](https://github.com/Zambiee)
 
 ## 🤝 Support
 
@@ -34,5 +41,5 @@ You liked this package? Then give it a ⭐️. If you want to help then:
 
 ## 📝 License
 
-Copyright © 2020 [Zambiee](https://github.com/Zambiee).<br />
+Copyright © 2021 [Zambiee](https://github.com/Zambiee).<br />
 This project is [MIT](https://opensource.org/licenses/MIT) licensed.
