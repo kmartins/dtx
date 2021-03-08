@@ -1,10 +1,10 @@
 name: shared_preferences_dtx
 description: A package that simplifies the access most of used properties/functions right in the package shared_preferences.
-version: 1.0.0
-repository: https://github.com/zambiee/dtx/other_packages/shared_preferences_dtx
-issue_tracker: https://github.com/zambiee/dtx/other_packages/shared_preferences_dtx/issues
-homepage: https://github.com/zambiee/dtx/other_packages/shared_preferences_dtx
-documentation: https://github.com/zambiee/dtx/other_packages/shared_preferences_dtx
+version: 1.0.1
+repository: https://github.com/Zambiee/dtx/tree/main/packages/other_packages/shared_preferences_dtx
+issue_tracker: https://github.com/zambiee/dtx/issues
+homepage: https://github.com/zambiee/dtx
+documentation: https://github.com/zambiee/dtx
 
 environment:
   sdk: ">=2.12.0 <3.0.0"    
