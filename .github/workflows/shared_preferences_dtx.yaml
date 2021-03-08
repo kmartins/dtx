@@ -3,13 +3,13 @@ name: Shared Preferences DTX
 on:
   push:
     branches:
-      - main
+      - "main"
     paths:
       - "packages/other_packages/shared_preferences_dtx/**"
       - ".github/workflows/shared_preferences_dtx.yaml"
   pull_request:
     branches:
-      - main
+      - "main"
     paths:
       - "packages/other_packages/shared_preferences_dtx/**"
       - ".github/workflows/shared_preferences_dtx.yaml"
