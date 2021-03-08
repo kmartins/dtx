@@ -13,6 +13,7 @@ Add it in your `pubspec.yaml`:
 
 ```yaml
 dependencies:
+  shared_preferences:
   shared_preferences_dtx:
 ```
 
