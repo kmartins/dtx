@@ -10,7 +10,7 @@ Future<void> main() async {
 class MyApp extends StatefulWidget {
   final SharedPreferences preferences;
 
-  MyApp({
+  const MyApp({
     Key? key,
     required this.preferences,
   }) : super(key: key);
@@ -21,7 +21,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   late final SharedPreferences preferences = widget.preferences;
-  late var themeMode = preferences.getOrElse(
+  late ThemeMode themeMode = preferences.getOrElse(
     'theme_mode',
     defaultValue: ThemeMode.light,
   );
@@ -100,11 +100,11 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
         actions: [
           IconButton(
-            icon: Icon(Icons.brightness_4_sharp),
+            icon: const Icon(Icons.brightness_4_sharp),
             onPressed: widget.onChangeThemeMode,
           ),
           IconButton(
-            icon: Icon(Icons.delete_rounded),
+            icon: const Icon(Icons.delete_rounded),
             onPressed: () {
               _clear();
               widget.onChangeThemeMode();
@@ -116,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            const Text(
               'You have pushed the button this many times:',
             ),
             Text(
@@ -132,13 +132,13 @@ class _MyHomePageState extends State<MyHomePage> {
           FloatingActionButton(
             onPressed: _decrementCounter,
             tooltip: 'Decrement',
-            child: Icon(Icons.remove),
+            child: const Icon(Icons.remove),
           ),
           const SizedBox(height: 16),
           FloatingActionButton(
             onPressed: _incrementCounter,
             tooltip: 'Increment',
-            child: Icon(Icons.add),
+            child: const Icon(Icons.add),
           ),
         ],
       ),
