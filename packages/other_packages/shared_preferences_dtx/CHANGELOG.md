@@ -1,3 +1,8 @@
+## [1.0.2] 
+
+- **build**: update lint package.
+- **build**: update shared_preferences package.
+
 ## [1.0.1] - 08/03/2021
 
 - Add an example.
