@@ -1,6 +1,6 @@
 name: flutter_context_dtx
 description: A package that simplifies the access most of used properties/functions right in the BuildContext.
-version: 1.3.1
+version: 1.3.2
 repository: https://github.com/Zambiee/dtx/tree/main/packages/flutter/flutter_context_dtx
 issue_tracker: https://github.com/zambiee/dtx/issues
 homepage: https://github.com/zambiee/dtx

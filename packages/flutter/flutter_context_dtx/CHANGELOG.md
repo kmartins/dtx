@@ -1,3 +1,7 @@
+## [1.3.2]
+
+- **build**: update lint package.
+
 ## [1.3.1] - 08/03/2021
 
 - Add an example.
