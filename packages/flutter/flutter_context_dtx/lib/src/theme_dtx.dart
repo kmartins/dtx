@@ -11,6 +11,10 @@ extension ThemeDtx on BuildContext {
 
   TextTheme get primaryTextTheme => theme.primaryTextTheme;
 
+  @Deprecated(
+    'Use context.colorSchemeOnSecondary instead. '
+    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
+  )
   TextTheme get accentTextTheme => theme.accentTextTheme;
 
   ColorScheme get colorScheme => theme.colorScheme;
@@ -83,6 +87,10 @@ extension ThemeDtx on BuildContext {
 
   Color get primaryColor => theme.primaryColor;
 
+  @Deprecated(
+    'No longer used by the package, please remove any reference to it. '
+    'This feature was deprecated after Flutter v2.3.0-0.2.pre.',
+  )
   Color get buttonColor => theme.buttonColor;
 
   Color get canvasColor => theme.canvasColor;
@@ -147,30 +155,82 @@ extension ThemeDtx on BuildContext {
 
   TextStyle? get overlinePrimaryTextStyle => primaryTextTheme.overline;
 
+  @Deprecated(
+    'No longer used by the package, please remove any reference to it. '
+    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
+  )
   TextStyle? get headline1AccentTextStyle => accentTextTheme.headline1;
 
+  @Deprecated(
+    'No longer used by the package, please remove any reference to it. '
+    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
+  )
   TextStyle? get headline2AccentTextStyle => accentTextTheme.headline2;
 
+  @Deprecated(
+    'No longer used by the package, please remove any reference to it. '
+    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
+  )
   TextStyle? get headline3AccentTextStyle => accentTextTheme.headline3;
 
+  @Deprecated(
+    'No longer used by the package, please remove any reference to it. '
+    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
+  )
   TextStyle? get headline4AccentTextStyle => accentTextTheme.headline4;
 
+  @Deprecated(
+    'No longer used by the package, please remove any reference to it. '
+    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
+  )
   TextStyle? get headline5AccentTextStyle => accentTextTheme.headline5;
 
+  @Deprecated(
+    'No longer used by the package, please remove any reference to it. '
+    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
+  )
   TextStyle? get headline6AccentTextStyle => accentTextTheme.headline6;
 
+  @Deprecated(
+    'No longer used by the package, please remove any reference to it. '
+    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
+  )
   TextStyle? get subtitle1AccentTextStyle => accentTextTheme.subtitle1;
 
+  @Deprecated(
+    'No longer used by the package, please remove any reference to it. '
+    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
+  )
   TextStyle? get bodyText1AccentTextStyle => accentTextTheme.bodyText1;
 
+  @Deprecated(
+    'No longer used by the package, please remove any reference to it. '
+    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
+  )
   TextStyle? get bodyText2AccentTextStyle => accentTextTheme.bodyText2;
 
+  @Deprecated(
+    'No longer used by the package, please remove any reference to it. '
+    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
+  )
   TextStyle? get captionAccentTextStyle => accentTextTheme.caption;
 
+  @Deprecated(
+    'No longer used by the package, please remove any reference to it. '
+    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
+  )
   TextStyle? get buttonAccentTextStyle => accentTextTheme.button;
 
+  @Deprecated(
+    'No longer used by the package, please remove any reference to it. '
+    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
+  )
   TextStyle? get subtitle2AccentTextStyle => accentTextTheme.subtitle2;
 
+  @Deprecated(
+    'No longer used by the package, please remove any reference to it. '
+    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
+  )
   TextStyle? get overlineAccentTextStyle => accentTextTheme.overline;
 
   DefaultTextStyle get defaultTextStyle => DefaultTextStyle.of(this);
