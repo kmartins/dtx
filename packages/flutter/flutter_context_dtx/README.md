@@ -110,7 +110,6 @@ class MyHomePage extends StatelessWidget {
 - `context.theme`
 - `context.textTheme`
 - `context.primaryTextTheme`
-- `context.accentTextTheme`
 - `context.bottomAppBarTheme`
 - `context.bottomSheetTheme`
 - `context.popupMenuTheme`
@@ -126,7 +125,6 @@ class MyHomePage extends StatelessWidget {
 - `context.isLightBrightness`
 - `context.backgroundColor`
 - `context.primaryColor`
-- `context.buttonColor`
 - `context.canvasColor`
 - `context.scaffoldBackgroundColor`
 - `context.dividerColor`
@@ -165,19 +163,6 @@ class MyHomePage extends StatelessWidget {
 - `context.buttonPrimaryTextStyle`
 - `context.subtitle2PrimaryTextStyle`
 - `context.overlinePrimaryTextStyle`
-- `context.headline1AccentTextStyle`
-- `context.headline2AccentTextStyle`
-- `context.headline3AccentTextStyle`
-- `context.headline4AccentTextStyle`
-- `context.headline5AccentTextStyle`
-- `context.headline6AccentTextStyle`
-- `context.subtitle1AccentTextStyle`
-- `context.bodyText1AccentTextStyle`
-- `context.bodyText2AccentTextStyle`
-- `context.captionAccentTextStyle`
-- `context.buttonAccentTextStyle`
-- `context.subtitle2AccentTextStyle`
-- `context.overlineAccentTextStyle`
 - `context.defaultTextStyle`
 - `context.textDirection`
   
