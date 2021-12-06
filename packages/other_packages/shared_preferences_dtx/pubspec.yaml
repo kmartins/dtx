@@ -13,9 +13,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  shared_preferences: ^2.0.7
+  shared_preferences: ^2.0.9
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  lint: ^1.6.0
+  lint: ^1.7.2
