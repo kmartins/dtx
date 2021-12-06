@@ -1,3 +1,21 @@
+## [1.3.3]
+
+- **build**: update packages.
+- **refactor**: Deprected: 
+  - `accentTextTheme`
+  - `buttonColor`
+  - `headline1AccentTextStyle`
+  - `headline2AccentTextStyle`
+  - `headline3AccentTextStyle`
+  - `headline4AccentTextStyle`
+  - `headline6AccentTextStyle`
+  - `subtitle1AccentTextStyle`
+  - `bodyText1AccentTextStyle`
+  - `bodyText2AccentTextStyle`
+  - `captionAccentTextStyle`
+  - `buttonAccentTextStyle`
+  - `subtitle2AccentTextStyle`
+  - `overlineAccentTextStyle`
 ## [1.3.2]
 
 - **build**: update lint package.
