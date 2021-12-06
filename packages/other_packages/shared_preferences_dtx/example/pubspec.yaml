@@ -1,18 +1,17 @@
 name: example
 description: A new Flutter project.
-publish_to: 'none' 
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.14.0 <3.0.0"
 
-dependencies:  
+dependencies:
   flutter:
-    sdk: flutter  
-  shared_preferences: ^2.0.3
-  shared_preferences_dtx: 
+    sdk: flutter
+  shared_preferences: ^2.0.9
+  shared_preferences_dtx:
     path: ../
-
 
 dev_dependencies:
   flutter_test:
@@ -20,34 +19,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
-  
-  
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  

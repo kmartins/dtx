@@ -22,7 +22,7 @@ jobs:
         working-directory: packages/other_packages/shared_preferences_dtx
     steps:
       - uses: actions/checkout@v2
-      - uses: subosito/flutter-action@v1.4.0
+      - uses: subosito/flutter-action@v1
         with:
           channel: stable
       - name: Install Dependencies
@@ -33,8 +33,8 @@ jobs:
         run: flutter analyze lib test example
       - name: Run tests
         run: flutter test --no-pub --coverage --test-randomize-ordering-seed random
-      - name: Check Code Coverage        
-        uses: VeryGoodOpenSource/very_good_coverage@v1.1.1
+      - name: Check Code Coverage
+        uses: VeryGoodOpenSource/very_good_coverage@v1.2.0
         with:
           path: packages/other_packages/shared_preferences_dtx/coverage/lcov.info
       - name: Upload coverage to Codecov
