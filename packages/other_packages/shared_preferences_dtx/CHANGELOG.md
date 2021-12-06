@@ -1,3 +1,7 @@
+## [1.0.3] 
+
+- **build**: update lint package.
+- **build**: update shared_preferences package.
 ## [1.0.2] 
 
 - **build**: update lint package.
