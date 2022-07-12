@@ -33,6 +33,8 @@ void main() {
   group('SharedPreferencesExtensions', () {
     late SharedPreferences preferences;
     const user = User('user', 20);
+    final dateTime = DateTime.utc(2022, 07, 12, 03, 04, 05, 99);
+    final differentDateTime = DateTime.utc(2021, 01, 26, 03, 04, 05, 99);
 
     setUp(() async {
       SharedPreferences.setMockInitialValues({});
@@ -57,6 +59,9 @@ void main() {
           preferences.getOrElse<ThemeMode>('theme_mode',
               defaultValue: ThemeMode.dark),
           ThemeMode.dark);
+      expect(
+          preferences.getOrElse<DateTime>('date_time', defaultValue: dateTime),
+          dateTime);
       final userJson = preferences.getOrElse<Map<String, dynamic>>('user',
           defaultValue: user.toJson());
       expect(userJson, user.toJson());
@@ -73,6 +78,7 @@ void main() {
         preferences.setValue<Color>('color', Colors.black),
         preferences.setValue<Map<String, dynamic>>('user', user.toJson()),
         preferences.setValue<ThemeMode>('theme_mode', ThemeMode.system),
+        preferences.setValue<DateTime>('date_time', dateTime),
       ]);
 
       expect(preferences.getValue<String>('string'), 'String');
@@ -83,6 +89,7 @@ void main() {
           preferences.getValue<List<String>>('list'), <String>['foo', 'bar']);
       expect(preferences.getValue<Color>('color'), Colors.black);
       expect(preferences.getValue<ThemeMode>('theme_mode'), ThemeMode.system);
+      expect(preferences.getValue<DateTime>('date_time'), dateTime);
       final userJson = preferences.getValue<Map<String, dynamic>>('user');
       expect(userJson, isNotNull);
       if (userJson != null) {
@@ -100,6 +107,7 @@ void main() {
         preferences.setValue('color', Colors.black),
         preferences.setValue('theme_mode', ThemeMode.light),
         preferences.setValue('user', user.toJson()),
+        preferences.setValue('date_time', dateTime),
       ]);
       expect(preferences.getOrElse('string', defaultValue: 'test'), 'String');
       expect(preferences.getOrElse('bool', defaultValue: true), false);
@@ -111,6 +119,9 @@ void main() {
           Colors.black);
       expect(preferences.getOrElse('theme_mode', defaultValue: ThemeMode.dark),
           ThemeMode.light);
+      expect(
+          preferences.getOrElse('date_time', defaultValue: differentDateTime),
+          dateTime);
       final userJson = preferences.getOrElse('user',
           defaultValue: const User('other', 50).toJson());
       expect(User.fromJson(userJson), user);
