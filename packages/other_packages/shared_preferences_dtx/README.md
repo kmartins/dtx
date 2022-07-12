@@ -76,16 +76,19 @@ preferences.getStringList('list') ?? <String>[];
 await preferences.setValue('color', Colors.black);
 await preferences.setValue('theme_mode', ThemeMode.dark);
 await preferences.setValue('user', {'name': 'user', 'age': 20});
+await preferences.setValue('date_time', DateTime(2022, 07, 12)));
 
 // get value
 preferences.getValue<Color>('color');
 preferences.getValue<ThemeMode>('theme_mode');
 preferences.getValue<Map<String, dynamic>>('user');
+preferences.getValue<DateTime>('date_time');
 
 // get value or else
 preferences.getOrElse('color', defaultValue: Colors.black);
 preferences.getOrElse('theme_mode', defaultValue: ThemeMode.dark);
 preferences.getOrElse('user', defaultValue:  {'name': 'user', 'age': 20});
+preferences.getOrElse('date_time', defaultValue: DateTime(2022, 07, 12));
 ```
 or 
 ```dart
@@ -93,12 +96,16 @@ or
 await preferences.setColor('color', Colors.black);
 await preferences.setThemeMode('theme_mode', ThemeMode.dark);
 await preferences.setJson('user', {'name': 'user', 'age': 20});
+await preferences.setDateTime('date_time', DateTime(2022, 07, 12)); // saves in utc
 
 // get value
 preferences.getColor('color') ?? Colors.black;
 preferences.getThemeMode('theme_mode') ?? ThemeMode.light;
 preferences.getJson('user') ?? {'name': 'user', 'age': 20};
+preferences.getDateTime('date_time') ?? DateTime(2022, 07, 12); // utc
 ```
+
+> Date time is saved as timezone independent milliseconds from the standard Unix epoch.
 
 ## 📝 License
 
