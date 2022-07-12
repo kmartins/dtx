@@ -15,7 +15,7 @@ extension SharedPreferencesExt on SharedPreferences {
     assert(
         T != dynamic,
         'Incompatible dynamic type - Use only double, int, String, bool, List<String>, '
-        'Map<String, dynamic>, ThemeMode or Color');
+        'Map<String, dynamic>, ThemeMode, Color or DateTime');
     if (T == double) {
       return getDouble(key) as T?;
     } else if (T == int) {
@@ -32,6 +32,8 @@ extension SharedPreferencesExt on SharedPreferences {
       return getJson(key) as T?;
     } else if (T == ThemeMode) {
       return getThemeMode(key) as T?;
+    } else if (T == DateTime) {
+      return getDateTime(key) as T?;
     }
     throw ArgumentError(
         'Incompatible preference type - Use only double, int, String, bool, List<String>, '
@@ -46,7 +48,7 @@ extension SharedPreferencesExt on SharedPreferences {
     assert(
         T != dynamic,
         'Incompatible dynamic type - Use only double, int, String, bool, List<String>, '
-        'Map<String, dynamic>, ThemeMode or Color');
+        'Map<String, dynamic>, ThemeMode, Color or DateTime');
     if (T == double) {
       return getDouble(key) as T? ?? defaultValue;
     } else if (T == int) {
@@ -63,10 +65,12 @@ extension SharedPreferencesExt on SharedPreferences {
       return getJson(key) as T? ?? defaultValue;
     } else if (T == ThemeMode) {
       return getThemeMode(key) as T? ?? defaultValue;
+    } else if (T == DateTime) {
+      return getDateTime(key) as T? ?? defaultValue;
     }
     throw ArgumentError(
         'Incompatible preference type - Use only double, int, String, bool, List<String>, '
-        'Map<String, dynamic>, ThemeMode or Color');
+        'Map<String, dynamic>, ThemeMode, Color or DateTime');
   }
 
   /// Writes a value, throwing an exception if it's not a
@@ -88,11 +92,13 @@ extension SharedPreferencesExt on SharedPreferences {
       return setJson(key, value);
     } else if (value is ThemeMode) {
       return setThemeMode(key, value);
+    } else if (value is DateTime) {
+      return setDateTime(key, value);
     }
 
     throw ArgumentError(
         'Incompatible preference type - Use only double, int, String, bool, List<String>, '
-        'Map<String, dynamic>, ThemeMode or Color');
+        'Map<String, dynamic>, ThemeMode, Color or DateTime');
   }
 
   Future<bool> setColor(String key, Color color) => setInt(key, color.value);
@@ -102,6 +108,11 @@ extension SharedPreferencesExt on SharedPreferences {
 
   Future<bool> setJson(String key, Map<String, dynamic> map) =>
       setString(key, jsonEncode(map));
+
+  /// Stores values as timezone independent milliseconds
+  /// from the standard Unix epoch.
+  Future<bool> setDateTime(String key, DateTime dateTime) =>
+      setString(key, dateTime.millisecondsSinceEpoch.toString());
 
   Color? getColor(String key) {
     final value = getInt(key);
@@ -116,5 +127,12 @@ extension SharedPreferencesExt on SharedPreferences {
   Map<String, dynamic>? getJson(String key) {
     final value = getString(key);
     return value != null ? jsonDecode(value) as Map<String, dynamic> : null;
+  }
+
+  DateTime? getDateTime(String key) {
+    final value = getString(key);
+    return value != null
+        ? DateTime.fromMillisecondsSinceEpoch(int.parse(value), isUtc: true)
+        : null;
   }
 }
