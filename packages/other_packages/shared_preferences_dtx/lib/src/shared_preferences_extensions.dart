@@ -50,23 +50,27 @@ extension SharedPreferencesExt on SharedPreferences {
         'Incompatible dynamic type - Use only double, int, String, bool, List<String>, '
         'Map<String, dynamic>, ThemeMode, Color or DateTime');
     if (T == double) {
-      return getDouble(key) as T? ?? defaultValue;
+      return getDoubleOrElse(key, defaultValue: defaultValue as double) as T;
     } else if (T == int) {
-      return getInt(key) as T? ?? defaultValue;
+      return getIntOrElse(key, defaultValue: defaultValue as int) as T;
     } else if (T == String) {
-      return getString(key) as T? ?? defaultValue;
+      return getStringOrElse(key, defaultValue: defaultValue as String) as T;
     } else if (_typeOf<List<String>>() == T) {
-      return getStringList(key) as T? ?? defaultValue;
+      return getStringListOrElse(key,
+          defaultValue: defaultValue as List<String>) as T;
     } else if (T == bool) {
-      return getBool(key) as T? ?? defaultValue;
+      return getBoolOrElse(key, defaultValue: defaultValue as bool) as T;
     } else if (T == Color) {
-      return getColor(key) as T? ?? defaultValue;
+      return getColorOrElse(key, defaultValue: defaultValue as Color) as T;
     } else if (T == _typeOf<Map<String, dynamic>>()) {
-      return getJson(key) as T? ?? defaultValue;
+      return getJsonOrElse(key,
+          defaultValue: defaultValue as Map<String, dynamic>) as T;
     } else if (T == ThemeMode) {
-      return getThemeMode(key) as T? ?? defaultValue;
+      return getThemeModeOrElse(key, defaultValue: defaultValue as ThemeMode)
+          as T;
     } else if (T == DateTime) {
-      return getDateTime(key) as T? ?? defaultValue;
+      return getDateTimeOrElse(key, defaultValue: defaultValue as DateTime)
+          as T;
     }
     throw ArgumentError(
         'Incompatible preference type - Use only double, int, String, bool, List<String>, '
@@ -135,4 +139,34 @@ extension SharedPreferencesExt on SharedPreferences {
         ? DateTime.fromMillisecondsSinceEpoch(int.parse(value), isUtc: true)
         : null;
   }
+
+  // ignore: avoid_positional_boolean_parameters
+  bool getBoolOrElse(String key, {required bool defaultValue}) =>
+      getBool(key) ?? defaultValue;
+
+  int getIntOrElse(String key, {required int defaultValue}) =>
+      getInt(key) ?? defaultValue;
+
+  double getDoubleOrElse(String key, {required double defaultValue}) =>
+      getDouble(key) ?? defaultValue;
+
+  String getStringOrElse(String key, {required String defaultValue}) =>
+      getString(key) ?? defaultValue;
+
+  List<String> getStringListOrElse(String key,
+          {required List<String> defaultValue}) =>
+      getStringList(key) ?? defaultValue;
+
+  Color getColorOrElse(String key, {required Color defaultValue}) =>
+      getColor(key) ?? defaultValue;
+
+  ThemeMode getThemeModeOrElse(String key, {required ThemeMode defaultValue}) =>
+      getThemeMode(key) ?? defaultValue;
+
+  Map<String, dynamic> getJsonOrElse(String key,
+          {required Map<String, dynamic> defaultValue}) =>
+      getJson(key) ?? defaultValue;
+
+  DateTime getDateTimeOrElse(String key, {required DateTime defaultValue}) =>
+      getDateTime(key) ?? defaultValue;
 }
