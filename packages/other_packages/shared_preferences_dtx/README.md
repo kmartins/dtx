@@ -69,6 +69,22 @@ preferences.getDouble('double') ?? 3.9;
 preferences.getStringList('list') ?? <String>[];
 ```
 
+# Default Value
+
+You can use the `getTypeOrElse` instead of `getType ?? defaultValue`, for the **any types**.
+
+```dart
+preferences.getString('String') ?? 'value';
+preferences.getBool('bool') ?? false;
+```
+
+**Or with `extensions`:**
+
+```dart
+preferences.getStringOrElse('String', defaultValue: 'value') ;
+preferences.getBoolOrElse('bool', defaultValue: false) ;
+```
+
 # New Preferences
 
 ```dart
