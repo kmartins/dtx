@@ -127,6 +127,69 @@ void main() {
       expect(User.fromJson(userJson), user);
     });
 
+    group('getTypeOrDefault', () {
+      test('gets default', () {
+        expect(preferences.getStringOrElse('string', defaultValue: 'String'),
+            'String');
+        expect(preferences.getBoolOrElse('bool', defaultValue: false), false);
+        expect(preferences.getIntOrElse('int', defaultValue: 2), 2);
+        expect(preferences.getDoubleOrElse('double', defaultValue: 2.5), 2.5);
+        expect(
+            preferences.getStringListOrElse('list',
+                defaultValue: <String>['foo', 'bar']),
+            <String>['foo', 'bar']);
+        expect(preferences.getColorOrElse('color', defaultValue: Colors.black),
+            Colors.black);
+        expect(
+            preferences.getThemeModeOrElse('theme_mode',
+                defaultValue: ThemeMode.dark),
+            ThemeMode.dark);
+        expect(
+            preferences.getDateTimeOrElse('date_time', defaultValue: dateTime),
+            dateTime);
+        final userJson =
+            preferences.getJsonOrElse('user', defaultValue: user.toJson());
+        expect(userJson, user.toJson());
+        expect(User.fromJson(userJson), user);
+      });
+
+      test('gets saved value', () async {
+        await Future.wait([
+          preferences.setValue('string', 'String'),
+          preferences.setValue('bool', false),
+          preferences.setValue('int', 2),
+          preferences.setValue('double', 2.5),
+          preferences.setValue('list', <String>['foo', 'bar']),
+          preferences.setValue('color', Colors.black),
+          preferences.setValue('theme_mode', ThemeMode.light),
+          preferences.setValue('user', user.toJson()),
+          preferences.setValue('date_time', dateTime),
+        ]);
+        expect(preferences.getStringOrElse('string', defaultValue: 'test'),
+            'String');
+        expect(preferences.getBoolOrElse('bool', defaultValue: true), false);
+        expect(preferences.getIntOrElse('int', defaultValue: 10), 2);
+        expect(preferences.getDoubleOrElse('double', defaultValue: 12.5), 2.5);
+        expect(
+            preferences
+                .getStringListOrElse('list', defaultValue: <String>['foo']),
+            <String>['foo', 'bar']);
+        expect(preferences.getColorOrElse('color', defaultValue: Colors.white),
+            Colors.black);
+        expect(
+            preferences.getThemeModeOrElse('theme_mode',
+                defaultValue: ThemeMode.dark),
+            ThemeMode.light);
+        expect(
+            preferences.getDateTimeOrElse('date_time',
+                defaultValue: differentDateTime),
+            dateTime);
+        final userJson = preferences.getJsonOrElse('user',
+            defaultValue: const User('other', 50).toJson());
+        expect(User.fromJson(userJson), user);
+      });
+    });
+
     test('throwing exception with type incompatible', () {
       expect(
         () => preferences.getValue('String'),
