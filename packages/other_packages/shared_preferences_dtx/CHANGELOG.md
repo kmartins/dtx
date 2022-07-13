@@ -1,3 +1,8 @@
+## [1.1.0] 
+
+- **feat**: Add new preference: `DateTime`.
+- **feat**: Add a new function for the get **default value** when the **preference** is `null`.
+
 ## [1.0.3] 
 
 - **build**: update lint package.
