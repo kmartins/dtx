@@ -193,7 +193,7 @@ void main() {
     test('throwing exception with type incompatible', () {
       expect(
         () => preferences.getValue('String'),
-        throwsAssertionError,
+        throwsArgumentError,
       );
       expect(
         () => preferences.getValue<SharedPreferences>('value'),
@@ -212,10 +212,6 @@ void main() {
       expect(
         () =>
             preferences.setValue<SharedPreferences>('preferences', preferences),
-        throwsArgumentError,
-      );
-      expect(
-        () => preferences.setValue<dynamic>('preferences', preferences),
         throwsArgumentError,
       );
     });
