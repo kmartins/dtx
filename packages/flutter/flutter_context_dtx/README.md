@@ -165,6 +165,21 @@ class MyHomePage extends StatelessWidget {
 - `context.overlinePrimaryTextStyle`
 - `context.defaultTextStyle`
 - `context.textDirection`
+- `context.displayLargeTextStyle`
+- `context.displayMediumTextStyle`
+- `context.displaySmallTextStyle`
+- `context.headlineLargeTextStyle`
+- `context.headlineMediumTextStyle`
+- `context.headlineSmallTextStyle`
+- `context.titleLargeTextStyle`
+- `context.titleMediumTextStyle`
+- `context.titleSmallTextStyle`
+- `context.labelLargeTextStyle`
+- `context.labelMediumTextStyle`
+- `context.labelSmallTextStyle`
+- `context.bodyLargeTextStyle`
+- `context.bodyMediumTextStyle`
+- `context.bodySmallTextStyle`
   
 - `context.colorScheme`
 - `context.colorSchemePrimary`
