@@ -29,6 +29,8 @@ extension ThemeDtx on BuildContext {
 
   Color get colorSchemeSecondary => colorScheme.secondary;
 
+  Color get colorSchemeTertiary => colorScheme.tertiary;
+
   @Deprecated(
     'Use context.colorSchemeSecondaryContainer instead. '
     'This feature was deprecated after v2.6.0-0.0.pre.',
@@ -39,7 +41,23 @@ extension ThemeDtx on BuildContext {
 
   Color get colorSchemeSecondaryContainer => colorScheme.secondaryContainer;
 
+  Color get colorSchemeTertiaryContainer => colorScheme.tertiaryContainer;
+
+  Color get colorSchemeErrorContainer => colorScheme.errorContainer;
+
+  Color get colorSchemeInversePrimary => colorScheme.inversePrimary;
+
+  Color get colorSchemeInverseSurface => colorScheme.inverseSurface;
+
   Color get colorSchemeSurface => colorScheme.surface;
+
+  Color get colorSchemeSurfaceVariant => colorScheme.surfaceVariant;
+
+  Color get colorSchemeSurfaceTint => colorScheme.surfaceTint;
+
+  Color get colorSchemeShadow => colorScheme.shadow;
+
+  Color get colorSchemeOutline => colorScheme.outline;
 
   Color get colorSchemeBackground => colorScheme.background;
 
@@ -54,6 +72,18 @@ extension ThemeDtx on BuildContext {
   Color get colorSchemeOnSurface => colorScheme.onSurface;
 
   Color get colorSchemeOnError => colorScheme.onError;
+
+  Color get colorSchemeOnPrimaryContainer => colorScheme.onPrimaryContainer;
+
+  Color get colorSchemeOnSecondaryContainer => colorScheme.onSecondaryContainer;
+
+  Color get colorSchemeOnTertiaryContainer => colorScheme.onTertiaryContainer;
+
+  Color get colorSchemeOnErrorContainer => colorScheme.onErrorContainer;
+
+  Color get colorSchemeOnInverseSurface => colorScheme.onInverseSurface;
+
+  Color get colorSchemeOnSurfaceVariant => colorScheme.onSurfaceVariant;
 
   Brightness get colorSchemeBrightness => colorScheme.brightness;
 
