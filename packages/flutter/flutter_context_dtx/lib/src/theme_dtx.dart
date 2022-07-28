@@ -21,11 +21,23 @@ extension ThemeDtx on BuildContext {
 
   Color get colorSchemePrimary => colorScheme.primary;
 
+  @Deprecated(
+    'Use context.colorSchemePrimaryContainer instead. '
+    'This feature was deprecated after v2.6.0-0.0.pre.',
+  )
   Color get colorSchemePrimaryVariant => colorScheme.primaryVariant;
 
   Color get colorSchemeSecondary => colorScheme.secondary;
 
+  @Deprecated(
+    'Use context.colorSchemeSecondaryContainer instead. '
+    'This feature was deprecated after v2.6.0-0.0.pre.',
+  )
   Color get colorSchemeSecondaryVariant => colorScheme.secondaryVariant;
+
+  Color get colorSchemePrimaryContainer => colorScheme.primaryContainer;
+
+  Color get colorSchemeSecondaryContainer => colorScheme.secondaryContainer;
 
   Color get colorSchemeSurface => colorScheme.surface;
 
@@ -69,7 +81,7 @@ extension ThemeDtx on BuildContext {
 
   IconThemeData get iconTheme => theme.iconTheme;
 
-  ListTileTheme get listTileTheme => ListTileTheme.of(this);
+  ListTileThemeData get listTileTheme => ListTileTheme.of(this);
 
   CardTheme get cardTheme => theme.cardTheme;
 
