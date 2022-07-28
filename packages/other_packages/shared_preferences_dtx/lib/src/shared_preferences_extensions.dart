@@ -32,8 +32,8 @@ extension SharedPreferencesExt on SharedPreferences {
       return getDateTime(key) as T?;
     }
     throw ArgumentError(
-        'Incompatible preference type - Use only double, int, String, bool, List<String>, '
-        'Map<String, dynamic>, ThemeMode or Color');
+        'The $T type is incompatible - Use only double, int, String, bool, List<String>, '
+        'Map<String, dynamic>, ThemeMode, Color or DateTime');
   }
 
   /// Reads a value, throwing an exception if it's not a
@@ -65,7 +65,7 @@ extension SharedPreferencesExt on SharedPreferences {
           as T;
     }
     throw ArgumentError(
-        'Incompatible preference type - Use only double, int, String, bool, List<String>, '
+        'The $T type is incompatible - Use only double, int, String, bool, List<String>, '
         'Map<String, dynamic>, ThemeMode, Color or DateTime');
   }
 
@@ -93,7 +93,7 @@ extension SharedPreferencesExt on SharedPreferences {
     }
 
     throw ArgumentError(
-        'Incompatible preference type - Use only double, int, String, bool, List<String>, '
+        'The $T type is incompatible - Use only double, int, String, bool, List<String>, '
         'Map<String, dynamic>, ThemeMode, Color or DateTime');
   }
 
