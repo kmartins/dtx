@@ -11,11 +11,7 @@ extension SharedPreferencesExt on SharedPreferences {
 
   /// Reads a value, throwing an exception if it's not a
   /// double, int, string, bool or List<String>.
-  T? getValue<T>(String key) {
-    assert(
-        T != dynamic,
-        'Incompatible dynamic type - Use only double, int, String, bool, List<String>, '
-        'Map<String, dynamic>, ThemeMode, Color or DateTime');
+  T? getValue<T extends Object>(String key) {
     if (T == double) {
       return getDouble(key) as T?;
     } else if (T == int) {
@@ -36,19 +32,15 @@ extension SharedPreferencesExt on SharedPreferences {
       return getDateTime(key) as T?;
     }
     throw ArgumentError(
-        'Incompatible preference type - Use only double, int, String, bool, List<String>, '
-        'Map<String, dynamic>, ThemeMode or Color');
+        'The $T type is incompatible - Use only double, int, String, bool, List<String>, '
+        'Map<String, dynamic>, ThemeMode, Color or DateTime');
   }
 
   /// Reads a value, throwing an exception if it's not a
   /// double, int, string, bool or List<String>.
   ///
   /// If the value is null, return the [defaultValue]
-  T getOrElse<T>(String key, {required T defaultValue}) {
-    assert(
-        T != dynamic,
-        'Incompatible dynamic type - Use only double, int, String, bool, List<String>, '
-        'Map<String, dynamic>, ThemeMode, Color or DateTime');
+  T getOrElse<T extends Object>(String key, {required T defaultValue}) {
     if (T == double) {
       return getDoubleOrElse(key, defaultValue: defaultValue as double) as T;
     } else if (T == int) {
@@ -73,13 +65,13 @@ extension SharedPreferencesExt on SharedPreferences {
           as T;
     }
     throw ArgumentError(
-        'Incompatible preference type - Use only double, int, String, bool, List<String>, '
+        'The $T type is incompatible - Use only double, int, String, bool, List<String>, '
         'Map<String, dynamic>, ThemeMode, Color or DateTime');
   }
 
   /// Writes a value, throwing an exception if it's not a
   /// double, int, string, bool or List<String>.
-  Future<bool> setValue<T>(String key, T value) {
+  Future<bool> setValue<T extends Object>(String key, T value) {
     if (value is List<String>) {
       return setStringList(key, value);
     } else if (value is double) {
@@ -101,7 +93,7 @@ extension SharedPreferencesExt on SharedPreferences {
     }
 
     throw ArgumentError(
-        'Incompatible preference type - Use only double, int, String, bool, List<String>, '
+        'The $T type is incompatible - Use only double, int, String, bool, List<String>, '
         'Map<String, dynamic>, ThemeMode, Color or DateTime');
   }
 
