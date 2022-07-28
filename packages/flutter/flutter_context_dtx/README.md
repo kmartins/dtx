@@ -170,8 +170,19 @@ class MyHomePage extends StatelessWidget {
 - `context.colorSchemePrimary`
 - `context.colorSchemePrimaryVariant`
 - `context.colorSchemeSecondary`
+- `context.colorSchemeTertiary`
 - `context.colorSchemeSecondaryVariant`
+- `context.colorSchemePrimaryContainer`
+- `context.colorSchemeSecondaryContainer `
+- `context.colorSchemeTertiaryContainer`
+- `context.colorSchemeErrorContainer`
+- `context.colorSchemeInversePrimary`
+- `context.colorSchemeInverseSurface`
 - `context.colorSchemeSurface`
+- `context.colorSchemeSurfaceVariant`
+- `context.colorSchemeSurfaceTint`
+- `context.colorSchemeShadow`
+- `context.colorSchemeOutline`
 - `context.colorSchemeBackground`
 - `context.colorSchemeError`
 - `context.colorSchemeOnPrimary`
@@ -179,6 +190,12 @@ class MyHomePage extends StatelessWidget {
 - `context.colorSchemeOnBackground`
 - `context.colorSchemeOnSurface`
 - `context.colorSchemeOnError`
+- `context.colorSchemeOnPrimaryContainer`
+- `context.colorSchemeOnSecondaryContainer`
+- `context.colorSchemeOnTertiaryContainer`
+- `context.colorSchemeOnErrorContainer`
+- `context.colorSchemeOnInverseSurface`
+- `context.colorSchemeOnSurfaceVariant`
 - `context.colorSchemeBrightness`
 
 - `context.platform`
