@@ -74,13 +74,17 @@ extension MediaQueryDtx on BuildContext {
   /// True if the current device is Desktop Screen
   bool get isDesktopScreen => shortestScreenSide >= 1440;
 
+  @Deprecated('Use isExtraSmallScreen instead.')
   bool get isXSmallScreen => screenWidth < 600;
 
-  bool get isSmallScreen => screenWidth < 1024 && !isXSmallScreen;
+  bool get isExtraSmallScreen => screenWidth < 600;
+
+  bool get isSmallScreen => screenWidth < 1240 && !isExtraSmallScreen;
 
   bool get isMediumScreen => screenWidth < 1440 && !isSmallScreen;
 
-  bool get isLargeScreen => screenWidth < 1920 && !isMediumScreen;
+  bool get isLargeScreen => screenWidth >= 1440;
 
+  @Deprecated('There is only the isLargeScreen.')
   bool get isXLargeScreen => screenWidth >= 1920;
 }
