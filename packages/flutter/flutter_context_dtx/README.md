@@ -79,6 +79,7 @@ class MyHomePage extends StatelessWidget {
 - `context.isLargeTabletScreen`
 - `context.isPhoneScreen`
 - `context.isTabletScreen`
+- `context.isLaptopScreen`
 - `context.isDesktopScreen`
 - `context.isXSmallScreen`
 - `context.isSmallScreen`

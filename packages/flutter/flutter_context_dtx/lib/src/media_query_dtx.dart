@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 ///
-/// Contains extensions for easier access to [MediaQuery] and [MediaQueryData] using [BuildContext]
+/// Contains extensions for easier access to [MediaQuery] and [MediaQueryData] using [BuildContext].
+///
+/// The screen size is based on the material design.
+/// https://material.io/design/layout/responsive-layout-grid.html
 ///
 extension MediaQueryDtx on BuildContext {
   MediaQueryData get mediaQuery => MediaQuery.of(this);
@@ -40,29 +43,36 @@ extension MediaQueryDtx on BuildContext {
 
   double get longestScreenSide => screenSize.longestSide;
 
+  @Deprecated('Use isPhoneScreen instead.')
   bool get isSmallPhoneScreen => shortestScreenSide < 360;
 
+  @Deprecated('Use isPhoneScreen instead.')
   bool get isMediumPhoneScreen =>
       shortestScreenSide < 400 && !isSmallPhoneScreen;
 
+  @Deprecated('Use isPhoneScreen instead.')
   bool get isLargePhoneScreen =>
       shortestScreenSide < 600 && !isMediumPhoneScreen;
 
+  @Deprecated('Use isTabletScreen instead.')
   bool get isSmallTabletScreen =>
       shortestScreenSide < 720 && !isLargePhoneScreen;
 
+  @Deprecated('Use isTabletScreen instead.')
   bool get isLargeTabletScreen =>
       shortestScreenSide < 960 && !isSmallTabletScreen;
 
-  /// True if the current device is Phone
-  bool get isPhoneScreen =>
-      isSmallPhoneScreen || isMediumPhoneScreen || isLargePhoneScreen;
+  /// True if the current device is Phone Screen
+  bool get isPhoneScreen => shortestScreenSide < 600;
 
-  /// True if the current device is Tablet
-  bool get isTabletScreen => isSmallTabletScreen || isLargeTabletScreen;
+  /// True if the current device is Tablet Screen
+  bool get isTabletScreen => shortestScreenSide < 1240 && !isPhoneScreen;
 
-  /// True if the current device is Desktop
-  bool get isDesktopScreen => shortestScreenSide >= 960;
+  /// True if the current device is Laptop Screen
+  bool get isLaptopScreen => shortestScreenSide < 1440 && !isTabletScreen;
+
+  /// True if the current device is Desktop Screen
+  bool get isDesktopScreen => shortestScreenSide >= 1440;
 
   bool get isXSmallScreen => screenWidth < 600;
 
