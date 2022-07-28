@@ -275,6 +275,36 @@ extension ThemeDtx on BuildContext {
   )
   TextStyle? get overlineAccentTextStyle => accentTextTheme.overline;
 
+  TextStyle? get displayLargeTextStyle => textTheme.displayLarge;
+
+  TextStyle? get displayMediumTextStyle => textTheme.displayMedium;
+
+  TextStyle? get displaySmallTextStyle => textTheme.displaySmall;
+
+  TextStyle? get headlineLargeTextStyle => textTheme.headlineLarge;
+
+  TextStyle? get headlineMediumTextStyle => textTheme.headlineMedium;
+
+  TextStyle? get headlineSmallTextStyle => textTheme.headlineSmall;
+
+  TextStyle? get titleLargeTextStyle => textTheme.titleLarge;
+
+  TextStyle? get titleMediumTextStyle => textTheme.titleMedium;
+
+  TextStyle? get titleSmallTextStyle => textTheme.titleSmall;
+
+  TextStyle? get labelLargeTextStyle => textTheme.labelLarge;
+
+  TextStyle? get labelMediumTextStyle => textTheme.labelMedium;
+
+  TextStyle? get labelSmallTextStyle => textTheme.labelSmall;
+
+  TextStyle? get bodyLargeTextStyle => textTheme.bodyLarge;
+
+  TextStyle? get bodyMediumTextStyle => textTheme.bodyMedium;
+
+  TextStyle? get bodySmallTextStyle => textTheme.bodySmall;
+
   DefaultTextStyle get defaultTextStyle => DefaultTextStyle.of(this);
 
   TextDirection get textDirection => Directionality.of(this);
