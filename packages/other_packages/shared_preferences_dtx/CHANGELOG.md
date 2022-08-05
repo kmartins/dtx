@@ -1,3 +1,7 @@
+## [1.1.1] 
+
+- **refactor**: remove the dynamic type
+
 ## [1.1.0] 
 
 - **feat**: Add new preference: `DateTime`.
