@@ -1,7 +1,22 @@
+## [1.4.0]
+
+- **feat**: Add new texts styles
+- **feat**: Add new material breakpoints
+- **feat**: Add new color scheme
+- **refactor**: Deprecated:
+  - `colorSchemePrimaryVariant`
+  - `colorSchemeSecondaryVariant`
+  - `isSmallPhoneScreen`
+  - `isMediumPhoneScreen`
+  - `isLargePhoneScreen`
+  - `isSmallTabletScreen` 
+  - `isLargeTabletScreen`
+  - `isXLargeScreen`
+  
 ## [1.3.3]
 
 - **build**: update packages.
-- **refactor**: Deprected: 
+- **refactor**: Deprecated: 
   - `accentTextTheme`
   - `buttonColor`
   - `headline1AccentTextStyle`
