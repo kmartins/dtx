@@ -48,43 +48,73 @@ extension MediaQueryDtx on BuildContext {
 
   @Deprecated('Use isPhoneScreen instead.')
   bool get isMediumPhoneScreen =>
-      shortestScreenSide < 400 && !isSmallPhoneScreen;
+      shortestScreenSide >= 360 && shortestScreenSide < 400;
 
   @Deprecated('Use isPhoneScreen instead.')
   bool get isLargePhoneScreen =>
-      shortestScreenSide < 600 && !isMediumPhoneScreen;
+      shortestScreenSide >= 400 && shortestScreenSide < 600;
 
   @Deprecated('Use isTabletScreen instead.')
   bool get isSmallTabletScreen =>
-      shortestScreenSide < 720 && !isLargePhoneScreen;
+      shortestScreenSide >= 600 && shortestScreenSide < 720;
 
   @Deprecated('Use isTabletScreen instead.')
   bool get isLargeTabletScreen =>
-      shortestScreenSide < 960 && !isSmallTabletScreen;
+      shortestScreenSide >= 720 && shortestScreenSide < 960;
 
-  /// True if the current device is Phone Screen
-  bool get isPhoneScreen => shortestScreenSide < 600;
+  bool get isPhoneScreen => screenWidth < 600;
 
-  /// True if the current device is Tablet Screen
-  bool get isTabletScreen => shortestScreenSide < 1240 && !isPhoneScreen;
+  bool get isTabletScreen => screenWidth >= 600 && screenWidth < 1240;
 
-  /// True if the current device is Laptop Screen
-  bool get isLaptopScreen => shortestScreenSide < 1440 && !isTabletScreen;
+  bool get isLaptopScreen => screenWidth >= 1240 && screenWidth < 1440;
 
-  /// True if the current device is Desktop Screen
-  bool get isDesktopScreen => shortestScreenSide >= 1440;
+  bool get isDesktopScreen => screenWidth >= 1440;
 
-  @Deprecated('Use isExtraSmallScreen instead.')
-  bool get isXSmallScreen => screenWidth < 600;
+  bool get isXSmallScreen => isPhoneScreen;
 
-  bool get isExtraSmallScreen => screenWidth < 600;
+  bool get isXXSmallScreen => screenWidth >= 600 && screenWidth < 905;
 
-  bool get isSmallScreen => screenWidth < 1240 && !isExtraSmallScreen;
+  bool get isSmallScreen => screenWidth >= 905 && screenWidth < 1240;
 
-  bool get isMediumScreen => screenWidth < 1440 && !isSmallScreen;
+  bool get isMediumScreen => isLaptopScreen;
 
-  bool get isLargeScreen => screenWidth >= 1440;
+  bool get isLargeScreen => isDesktopScreen;
 
   @Deprecated('There is only the isLargeScreen.')
   bool get isXLargeScreen => screenWidth >= 1920;
+
+  double get margin {
+    if (isXSmallScreen) {
+      return 16;
+    } else if (isXXSmallScreen) {
+      return 32;
+    } else if (isSmallScreen) {
+      return (screenWidth - 840) / 2;
+    } else if (isMediumScreen) {
+      return 200;
+    }
+    return (screenWidth - 1040) / 2;
+  }
+
+  int get columns {
+    if (isXSmallScreen) {
+      return 4;
+    } else if (isXXSmallScreen) {
+      return 8;
+    }
+    return 12;
+  }
+
+  double get widthBody {
+    if (isXSmallScreen) {
+      return screenWidth - (16 * 2);
+    } else if (isXXSmallScreen) {
+      return screenWidth - (32 * 2);
+    } else if (isSmallScreen) {
+      return 840;
+    } else if (isMediumScreen) {
+      return screenWidth - (200 * 2);
+    }
+    return 1040;
+  }
 }
