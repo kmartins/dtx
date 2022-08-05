@@ -54,6 +54,10 @@ class MyHomePage extends StatelessWidget {
 
 ## MediaQuery:
 
+```
+⚠️ Note: The breakpoints are based on the material design.
+```
+
 - `context.mediaQuery`
 - `context.screenSize`
 - `context.screenPadding`
@@ -82,11 +86,15 @@ class MyHomePage extends StatelessWidget {
 - `context.isLaptopScreen`
 - `context.isDesktopScreen`
 - `context.isXSmallScreen`
-- `context.isExtraSmallScreen`
+- `context.isXXSmallScreen`
+- `context.isSmallScreen`
 - `context.isSmallScreen`
 - `context.isMediumScreen`
 - `context.isLargeScreen`
 - `context.isXLargeScreen`
+- `context.margin`
+- `context.columns`
+- `context.widthBody`
 
 ## Navigator:
 
