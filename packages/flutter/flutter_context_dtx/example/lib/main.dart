@@ -39,43 +39,32 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('-----------------------');
-    print('Is Phone ${context.isPhoneScreen}');
-    print('Is tablet ${context.isTabletScreen}');
-    print('Is Laptop ${context.isLaptopScreen}');
-    print('Is Desktop ${context.isDesktopScreen}');
     return Scaffold(
       backgroundColor: context.scaffoldBackgroundColor,
       appBar: AppBar(),
       body: Center(
-        child: Container(
-          width: context.widthBody,
-          color: Colors.red,
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              ElevatedButton(
+                onPressed: () => context.pushNamed(Routes.form),
+                child: Text(
+                  'Form Example',
+                  style: context.headline6TextStyle,
+                ),
+              ),
+              const SizedBox(height: 16),
+              ElevatedButton(
+                onPressed: () => context.pushNamed(Routes.focusScope),
+                child: Text(
+                  'Focus Scope Example',
+                  style: context.headline6TextStyle,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
-      // body: Center(
-      //   child: SingleChildScrollView(
-      //     child: Column(
-      //       children: <Widget>[
-      //         ElevatedButton(
-      //           onPressed: () => context.pushNamed(Routes.form),
-      //           child: Text(
-      //             'Form Example',
-      //             style: context.headline6TextStyle,
-      //           ),
-      //         ),
-      //         const SizedBox(height: 16),
-      //         ElevatedButton(
-      //           onPressed: () => context.pushNamed(Routes.focusScope),
-      //           child: Text(
-      //             'Focus Scope Example',
-      //             style: context.headline6TextStyle,
-      //           ),
-      //         ),
-      //       ],
-      //     ),
-      //   ),
-      // ),
     );
   }
 }
