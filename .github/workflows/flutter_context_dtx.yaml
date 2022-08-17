@@ -16,18 +16,13 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: packages/other_packages/shared_preferences_dtx
-    steps:
-      - uses: actions/checkout@v2
-      - uses: subosito/flutter-action@v1
-        with:
-          channel: stable
-      - name: Install Dependencies
-        run: flutter packages get
-      - name: Check format
-        run: flutter format --set-exit-if-changed lib example
-      - name: Analyze
-        run: flutter analyze lib example
+    uses: kmartins/workflows/.github/workflows/flutter_package.yaml@flutter_package-v1.0.2
+    with:
+      format_directories: lib example
+      analyze_directories: lib example
+      run_tests: false
+      check_coverage: false
+      upload_coverage_codecov: false
+
+  pana:
+    uses: kmartins/workflows/.github/workflows/pana.yaml@pana-v1.0.3

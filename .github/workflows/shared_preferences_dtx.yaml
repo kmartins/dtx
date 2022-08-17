@@ -16,26 +16,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: packages/other_packages/shared_preferences_dtx
-    steps:
-      - uses: actions/checkout@v3
-      - uses: subosito/flutter-action@v2
-        with:
-          channel: stable
-      - name: Install Dependencies
-        run: flutter packages get
-      - name: Check format
-        run: flutter format --set-exit-if-changed lib test example
-      - name: Analyze
-        run: flutter analyze lib test example
-      - name: Run tests
-        run: flutter test --no-pub --coverage --test-randomize-ordering-seed random
-      - name: Check Code Coverage
-        uses: VeryGoodOpenSource/very_good_coverage@v1
-        with:
-          path: packages/other_packages/shared_preferences_dtx/coverage/lcov.info
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+    uses: kmartins/workflows/.github/workflows/flutter_package.yaml@flutter_package-v1.0.2
+
+  pana:
+    uses: kmartins/workflows/.github/workflows/pana.yaml@pana-v1.0.3
