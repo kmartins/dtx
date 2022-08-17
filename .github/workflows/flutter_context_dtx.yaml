@@ -18,6 +18,7 @@ jobs:
   build:
     uses: kmartins/workflows/.github/workflows/flutter_package.yaml@flutter_package-v1.0.2
     with:
+      working_directory: packages/flutter/flutter_context_dtx
       format_directories: lib example
       analyze_directories: lib example
       run_tests: false
@@ -26,3 +27,5 @@ jobs:
 
   pana:
     uses: kmartins/workflows/.github/workflows/pana.yaml@pana-v1.0.3
+    with:
+      working_directory: packages/flutter/flutter_context_dtx

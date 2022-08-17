@@ -17,6 +17,10 @@ on:
 jobs:
   build:
     uses: kmartins/workflows/.github/workflows/flutter_package.yaml@flutter_package-v1.0.2
+    with:
+      working_directory: packages/other_packages/shared_preferences_dtx
 
   pana:
     uses: kmartins/workflows/.github/workflows/pana.yaml@pana-v1.0.3
+    with:
+      working_directory: packages/other_packages/shared_preferences_dtx
