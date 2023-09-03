@@ -7,95 +7,66 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// Contains extensions to read and write a value in [SharedPreferences]
 ///
 extension SharedPreferencesExt on SharedPreferences {
-  Type _typeOf<T>() => T;
-
   /// Reads a value, throwing an exception if it's not a
   /// double, int, string, bool or List<String>.
-  T? getValue<T extends Object>(String key) {
-    if (T == double) {
-      return getDouble(key) as T?;
-    } else if (T == int) {
-      return getInt(key) as T?;
-    } else if (T == String) {
-      return getString(key) as T?;
-    } else if (_typeOf<List<String>>() == T) {
-      return getStringList(key) as T?;
-    } else if (T == bool) {
-      return getBool(key) as T?;
-    } else if (T == Color) {
-      return getColor(key) as T?;
-    } else if (T == _typeOf<Map<String, dynamic>>()) {
-      return getJson(key) as T?;
-    } else if (T == ThemeMode) {
-      return getThemeMode(key) as T?;
-    } else if (T == DateTime) {
-      return getDateTime(key) as T?;
-    }
-    throw ArgumentError(
-        'The $T type is incompatible - Use only double, int, String, bool, List<String>, '
-        'Map<String, dynamic>, ThemeMode, Color or DateTime');
-  }
+  T? getValue<T extends Object>(String key) => switch (T) {
+        const (double) => getDouble(key) as T?,
+        const (int) => getInt(key) as T?,
+        const (String) => getString(key) as T?,
+        const (bool) => getBool(key) as T?,
+        const (Color) => getColor(key) as T?,
+        const (ThemeMode) => getThemeMode(key) as T?,
+        const (DateTime) => getDateTime(key) as T?,
+        const (List<String>) => getStringList(key) as T?,
+        const (Map<String, dynamic>) => getJson(key) as T?,
+        _ => throw _getArgumentError<T>(),
+      };
 
   /// Reads a value, throwing an exception if it's not a
   /// double, int, string, bool or List<String>.
   ///
   /// If the value is null, return the [defaultValue]
-  T getOrElse<T extends Object>(String key, {required T defaultValue}) {
-    if (T == double) {
-      return getDoubleOrElse(key, defaultValue: defaultValue as double) as T;
-    } else if (T == int) {
-      return getIntOrElse(key, defaultValue: defaultValue as int) as T;
-    } else if (T == String) {
-      return getStringOrElse(key, defaultValue: defaultValue as String) as T;
-    } else if (_typeOf<List<String>>() == T) {
-      return getStringListOrElse(key,
-          defaultValue: defaultValue as List<String>) as T;
-    } else if (T == bool) {
-      return getBoolOrElse(key, defaultValue: defaultValue as bool) as T;
-    } else if (T == Color) {
-      return getColorOrElse(key, defaultValue: defaultValue as Color) as T;
-    } else if (T == _typeOf<Map<String, dynamic>>()) {
-      return getJsonOrElse(key,
-          defaultValue: defaultValue as Map<String, dynamic>) as T;
-    } else if (T == ThemeMode) {
-      return getThemeModeOrElse(key, defaultValue: defaultValue as ThemeMode)
-          as T;
-    } else if (T == DateTime) {
-      return getDateTimeOrElse(key, defaultValue: defaultValue as DateTime)
-          as T;
-    }
-    throw ArgumentError(
-        'The $T type is incompatible - Use only double, int, String, bool, List<String>, '
-        'Map<String, dynamic>, ThemeMode, Color or DateTime');
-  }
+  T getOrElse<T extends Object>(String key, {required T defaultValue}) =>
+      switch (defaultValue) {
+        (final double value) => getDoubleOrElse(key, defaultValue: value) as T,
+        (final int value) => getIntOrElse(key, defaultValue: value) as T,
+        (final String value) => getStringOrElse(key, defaultValue: value) as T,
+        (final bool value) => getBoolOrElse(key, defaultValue: value) as T,
+        (final Color value) => getColorOrElse(key, defaultValue: value) as T,
+        (final ThemeMode value) =>
+          getThemeModeOrElse(key, defaultValue: value) as T,
+        (final DateTime value) =>
+          getDateTimeOrElse(key, defaultValue: value) as T,
+        (final List<String> value) => getStringListOrElse(
+            key,
+            defaultValue: value,
+          ) as T,
+        (final Map<String, dynamic> value) => getJsonOrElse(
+            key,
+            defaultValue: value,
+          ) as T,
+        _ => throw _getArgumentError<T>(),
+      };
 
   /// Writes a value, throwing an exception if it's not a
   /// double, int, string, bool or List<String>.
-  Future<bool> setValue<T extends Object>(String key, T value) {
-    if (value is List<String>) {
-      return setStringList(key, value);
-    } else if (value is double) {
-      return setDouble(key, value);
-    } else if (value is int) {
-      return setInt(key, value);
-    } else if (value is String) {
-      return setString(key, value);
-    } else if (value is bool) {
-      return setBool(key, value);
-    } else if (value is Color) {
-      return setColor(key, value);
-    } else if (value is Map<String, dynamic>) {
-      return setJson(key, value);
-    } else if (value is ThemeMode) {
-      return setThemeMode(key, value);
-    } else if (value is DateTime) {
-      return setDateTime(key, value);
-    }
+  Future<bool> setValue<T extends Object>(String key, T value) =>
+      switch (value) {
+        (final double value) => setDouble(key, value),
+        (final int value) => setInt(key, value),
+        (final String value) => setString(key, value),
+        (final bool value) => setBool(key, value),
+        (final Color value) => setColor(key, value),
+        (final ThemeMode value) => setThemeMode(key, value),
+        (final DateTime value) => setDateTime(key, value),
+        (final List<String> value) => setStringList(key, value),
+        (final Map<String, dynamic> value) => setJson(key, value),
+        _ => throw _getArgumentError<T>(),
+      };
 
-    throw ArgumentError(
-        'The $T type is incompatible - Use only double, int, String, bool, List<String>, '
-        'Map<String, dynamic>, ThemeMode, Color or DateTime');
-  }
+  ArgumentError _getArgumentError<T extends Object>() => ArgumentError(
+      'The $T type is incompatible - Use only double, int, String, bool, List<String>, '
+      'Map<String, dynamic>, ThemeMode, Color or DateTime');
 
   Future<bool> setColor(String key, Color color) => setInt(key, color.value);
 
@@ -132,7 +103,6 @@ extension SharedPreferencesExt on SharedPreferences {
         : null;
   }
 
-  // ignore: avoid_positional_boolean_parameters
   bool getBoolOrElse(String key, {required bool defaultValue}) =>
       getBool(key) ?? defaultValue;
 
@@ -145,8 +115,10 @@ extension SharedPreferencesExt on SharedPreferences {
   String getStringOrElse(String key, {required String defaultValue}) =>
       getString(key) ?? defaultValue;
 
-  List<String> getStringListOrElse(String key,
-          {required List<String> defaultValue}) =>
+  List<String> getStringListOrElse(
+    String key, {
+    required List<String> defaultValue,
+  }) =>
       getStringList(key) ?? defaultValue;
 
   Color getColorOrElse(String key, {required Color defaultValue}) =>
@@ -155,8 +127,10 @@ extension SharedPreferencesExt on SharedPreferences {
   ThemeMode getThemeModeOrElse(String key, {required ThemeMode defaultValue}) =>
       getThemeMode(key) ?? defaultValue;
 
-  Map<String, dynamic> getJsonOrElse(String key,
-          {required Map<String, dynamic> defaultValue}) =>
+  Map<String, dynamic> getJsonOrElse(
+    String key, {
+    required Map<String, dynamic> defaultValue,
+  }) =>
       getJson(key) ?? defaultValue;
 
   DateTime getDateTimeOrElse(String key, {required DateTime defaultValue}) =>
