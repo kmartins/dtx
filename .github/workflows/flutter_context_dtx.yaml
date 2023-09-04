@@ -19,7 +19,6 @@ jobs:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
     with:
       working_directory: packages/flutter/flutter_context_dtx
-      format_directories: "lib"
       analyze_directories: "lib"
 
   pana:
