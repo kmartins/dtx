@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor: Colors.white24,
         primaryTextTheme: const TextTheme(
-          headline6: TextStyle(color: Colors.blue),
+          titleLarge: TextStyle(color: Colors.blue),
         ),
       ),
       home: const HomePage(),

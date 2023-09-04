@@ -14,8 +14,10 @@ extension NavigatorDtx on BuildContext {
   }) =>
       navigator.pushReplacement(route, result: result);
 
-  Future<T?> pushNamed<T extends Object?>(String routeName,
-          {Object? arguments}) =>
+  Future<T?> pushNamed<T extends Object?>(
+    String routeName, {
+    Object? arguments,
+  }) =>
       navigator.pushNamed(routeName, arguments: arguments);
 
   Future<T?> pushReplacementNamed<T extends Object?, TO extends Object?>(
@@ -34,16 +36,22 @@ extension NavigatorDtx on BuildContext {
     TO? result,
     Object? arguments,
   }) =>
-      navigator.popAndPushNamed(routeName,
-          result: result, arguments: arguments);
+      navigator.popAndPushNamed(
+        routeName,
+        result: result,
+        arguments: arguments,
+      );
 
   Future<T?> pushNamedAndRemoveUntil<T extends Object?>(
     String newRouteName,
     RoutePredicate predicate, {
     Object? arguments,
   }) =>
-      navigator.pushNamedAndRemoveUntil(newRouteName, predicate,
-          arguments: arguments);
+      navigator.pushNamedAndRemoveUntil(
+        newRouteName,
+        predicate,
+        arguments: arguments,
+      );
 
   Future<T?> pushAndRemoveUntil<T extends Object?>(
     Route<T> newRoute,

@@ -83,6 +83,7 @@ extension MediaQueryDtx on BuildContext {
   @Deprecated('There is only the isLargeScreen.')
   bool get isXLargeScreen => screenWidth >= 1920;
 
+  /// Material 2
   double get margin {
     if (isXSmallScreen) {
       return 16;
@@ -96,6 +97,7 @@ extension MediaQueryDtx on BuildContext {
     return (screenWidth - 1040) / 2;
   }
 
+  /// Material 2
   int get columns {
     if (isXSmallScreen) {
       return 4;
@@ -105,6 +107,7 @@ extension MediaQueryDtx on BuildContext {
     return 12;
   }
 
+  /// Material 2
   double get widthBody {
     if (isXSmallScreen) {
       return screenWidth - (16 * 2);
@@ -116,5 +119,34 @@ extension MediaQueryDtx on BuildContext {
       return screenWidth - (200 * 2);
     }
     return 1040;
+  }
+
+  /// Material Design 3 - Phone in portrait
+  bool get isCompactLayout => screenWidth < 600;
+
+  /// Material Design 3 - Phone in portrait and Tablet in
+  /// portrait Foldable in portrait (unfolded)
+  bool get isMediumLayout => screenWidth >= 600 && screenWidth < 840;
+
+  /// Material 3 - Phone in landscape
+  /// Tablet in landscape
+  /// Foldable in landscape (unfolded)
+  /// Desktop
+  bool get isExtendedLayout => screenWidth >= 840;
+
+  /// Material 3
+  double get space {
+    if (isCompactLayout) {
+      return 16;
+    }
+    return 24;
+  }
+
+  /// Material 3
+  double get pane {
+    if (isExtendedLayout) {
+      return 2;
+    }
+    return 1;
   }
 }
