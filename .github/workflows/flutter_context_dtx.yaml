@@ -26,6 +26,6 @@ jobs:
       upload_coverage_codecov: false
 
   pana:
-    uses: kmartins/workflows/.github/workflows/pana.yaml@v1
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/pana.yml@v1
     with:
       working_directory: packages/flutter/flutter_context_dtx
