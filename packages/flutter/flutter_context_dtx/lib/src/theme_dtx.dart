@@ -11,31 +11,13 @@ extension ThemeDtx on BuildContext {
 
   TextTheme get primaryTextTheme => theme.primaryTextTheme;
 
-  @Deprecated(
-    'Use context.colorSchemeOnSecondary instead. '
-    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
-  )
-  TextTheme get accentTextTheme => theme.accentTextTheme;
-
   ColorScheme get colorScheme => theme.colorScheme;
 
   Color get colorSchemePrimary => colorScheme.primary;
 
-  @Deprecated(
-    'Use context.colorSchemePrimaryContainer instead. '
-    'This feature was deprecated after v2.6.0-0.0.pre.',
-  )
-  Color get colorSchemePrimaryVariant => colorScheme.primaryVariant;
-
   Color get colorSchemeSecondary => colorScheme.secondary;
 
   Color get colorSchemeTertiary => colorScheme.tertiary;
-
-  @Deprecated(
-    'Use context.colorSchemeSecondaryContainer instead. '
-    'This feature was deprecated after v2.6.0-0.0.pre.',
-  )
-  Color get colorSchemeSecondaryVariant => colorScheme.secondaryVariant;
 
   Color get colorSchemePrimaryContainer => colorScheme.primaryContainer;
 
@@ -125,15 +107,9 @@ extension ThemeDtx on BuildContext {
 
   bool get isLightBrightness => theme.brightness == Brightness.light;
 
-  Color get backgroundColor => theme.backgroundColor;
+  Color get backgroundColor => theme.colorScheme.background;
 
   Color get primaryColor => theme.primaryColor;
-
-  @Deprecated(
-    'No longer used by the package, please remove any reference to it. '
-    'This feature was deprecated after Flutter v2.3.0-0.2.pre.',
-  )
-  Color get buttonColor => theme.buttonColor;
 
   Color get canvasColor => theme.canvasColor;
 
@@ -145,135 +121,61 @@ extension ThemeDtx on BuildContext {
 
   AppBarTheme get appBarTheme => theme.appBarTheme;
 
-  TextStyle? get headline1TextStyle => textTheme.headline1;
+  TextStyle? get headline1TextStyle => textTheme.displayLarge;
 
-  TextStyle? get headline2TextStyle => textTheme.headline2;
+  TextStyle? get headline2TextStyle => textTheme.displayMedium;
 
-  TextStyle? get headline3TextStyle => textTheme.headline3;
+  TextStyle? get headline3TextStyle => textTheme.displaySmall;
 
-  TextStyle? get headline4TextStyle => textTheme.headline4;
+  TextStyle? get headline4TextStyle => textTheme.headlineMedium;
 
-  TextStyle? get headline5TextStyle => textTheme.headline5;
+  TextStyle? get headline5TextStyle => textTheme.headlineSmall;
 
-  TextStyle? get headline6TextStyle => textTheme.headline6;
+  TextStyle? get headline6TextStyle => textTheme.titleLarge;
 
-  TextStyle? get subtitle1TextStyle => textTheme.subtitle1;
+  TextStyle? get subtitle1TextStyle => textTheme.titleMedium;
 
-  TextStyle? get bodyText1TextStyle => textTheme.bodyText1;
+  TextStyle? get bodyText1TextStyle => textTheme.bodyLarge;
 
-  TextStyle? get bodyText2TextStyle => textTheme.bodyText2;
+  TextStyle? get bodyText2TextStyle => textTheme.bodyMedium;
 
-  TextStyle? get captionTextStyle => textTheme.caption;
+  TextStyle? get captionTextStyle => textTheme.bodySmall;
 
-  TextStyle? get buttonTextStyle => textTheme.button;
+  TextStyle? get buttonTextStyle => textTheme.labelLarge;
 
-  TextStyle? get subtitle2TextStyle => textTheme.subtitle2;
+  TextStyle? get subtitle2TextStyle => textTheme.titleSmall;
 
-  TextStyle? get overlineTextStyle => textTheme.overline;
+  TextStyle? get overlineTextStyle => textTheme.labelSmall;
 
-  TextStyle? get headline1PrimaryTextStyle => primaryTextTheme.headline1;
+  TextStyle? get headline1PrimaryTextStyle => primaryTextTheme.displayLarge;
 
-  TextStyle? get headline2PrimaryTextStyle => primaryTextTheme.headline2;
+  TextStyle? get headline2PrimaryTextStyle => primaryTextTheme.displayMedium;
 
-  TextStyle? get headline3PrimaryTextStyle => primaryTextTheme.headline3;
+  TextStyle? get headline3PrimaryTextStyle => primaryTextTheme.displaySmall;
 
-  TextStyle? get headline4PrimaryTextStyle => primaryTextTheme.headline4;
+  TextStyle? get headline4PrimaryTextStyle => primaryTextTheme.headlineMedium;
 
-  TextStyle? get headline5PrimaryTextStyle => primaryTextTheme.headline5;
+  TextStyle? get headline5PrimaryTextStyle => primaryTextTheme.headlineSmall;
 
-  TextStyle? get headline6PrimaryTextStyle => primaryTextTheme.headline6;
+  TextStyle? get headline6PrimaryTextStyle => primaryTextTheme.titleLarge;
 
-  TextStyle? get subtitle1PrimaryTextStyle => primaryTextTheme.subtitle1;
+  TextStyle? get subtitle1PrimaryTextStyle => primaryTextTheme.titleMedium;
 
-  TextStyle? get bodyText1PrimaryTextStyle => primaryTextTheme.bodyText1;
+  TextStyle? get bodyText1PrimaryTextStyle => primaryTextTheme.bodyLarge;
 
-  TextStyle? get bodyText2PrimaryTextStyle => primaryTextTheme.bodyText2;
+  TextStyle? get bodyText2PrimaryTextStyle => primaryTextTheme.bodyMedium;
 
-  TextStyle? get captionPrimaryTextStyle => primaryTextTheme.caption;
+  TextStyle? get captionPrimaryTextStyle => primaryTextTheme.bodySmall;
 
-  TextStyle? get buttonPrimaryTextStyle => primaryTextTheme.button;
+  TextStyle? get buttonPrimaryTextStyle => primaryTextTheme.labelLarge;
 
-  TextStyle? get subtitle2PrimaryTextStyle => primaryTextTheme.subtitle2;
+  TextStyle? get subtitle2PrimaryTextStyle => primaryTextTheme.titleSmall;
 
+  @Deprecated(
+    'Use labelSmall instead. '
+    'This feature was deprecated after Flutter v3.1.0-0.0.pre.',
+  )
   TextStyle? get overlinePrimaryTextStyle => primaryTextTheme.overline;
-
-  @Deprecated(
-    'No longer used by the package, please remove any reference to it. '
-    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
-  )
-  TextStyle? get headline1AccentTextStyle => accentTextTheme.headline1;
-
-  @Deprecated(
-    'No longer used by the package, please remove any reference to it. '
-    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
-  )
-  TextStyle? get headline2AccentTextStyle => accentTextTheme.headline2;
-
-  @Deprecated(
-    'No longer used by the package, please remove any reference to it. '
-    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
-  )
-  TextStyle? get headline3AccentTextStyle => accentTextTheme.headline3;
-
-  @Deprecated(
-    'No longer used by the package, please remove any reference to it. '
-    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
-  )
-  TextStyle? get headline4AccentTextStyle => accentTextTheme.headline4;
-
-  @Deprecated(
-    'No longer used by the package, please remove any reference to it. '
-    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
-  )
-  TextStyle? get headline5AccentTextStyle => accentTextTheme.headline5;
-
-  @Deprecated(
-    'No longer used by the package, please remove any reference to it. '
-    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
-  )
-  TextStyle? get headline6AccentTextStyle => accentTextTheme.headline6;
-
-  @Deprecated(
-    'No longer used by the package, please remove any reference to it. '
-    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
-  )
-  TextStyle? get subtitle1AccentTextStyle => accentTextTheme.subtitle1;
-
-  @Deprecated(
-    'No longer used by the package, please remove any reference to it. '
-    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
-  )
-  TextStyle? get bodyText1AccentTextStyle => accentTextTheme.bodyText1;
-
-  @Deprecated(
-    'No longer used by the package, please remove any reference to it. '
-    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
-  )
-  TextStyle? get bodyText2AccentTextStyle => accentTextTheme.bodyText2;
-
-  @Deprecated(
-    'No longer used by the package, please remove any reference to it. '
-    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
-  )
-  TextStyle? get captionAccentTextStyle => accentTextTheme.caption;
-
-  @Deprecated(
-    'No longer used by the package, please remove any reference to it. '
-    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
-  )
-  TextStyle? get buttonAccentTextStyle => accentTextTheme.button;
-
-  @Deprecated(
-    'No longer used by the package, please remove any reference to it. '
-    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
-  )
-  TextStyle? get subtitle2AccentTextStyle => accentTextTheme.subtitle2;
-
-  @Deprecated(
-    'No longer used by the package, please remove any reference to it. '
-    'This feature was deprecated after Flutter v2.3.0-0.1.pre',
-  )
-  TextStyle? get overlineAccentTextStyle => accentTextTheme.overline;
 
   TextStyle? get displayLargeTextStyle => textTheme.displayLarge;
 

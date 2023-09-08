@@ -1,5 +1,3 @@
-library flutter_context_dtx;
-
 export 'src/build_context_dtx.dart';
 export 'src/controller_dtx.dart';
 export 'src/focus_scope_dtx.dart';

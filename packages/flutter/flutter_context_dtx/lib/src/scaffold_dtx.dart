@@ -33,12 +33,14 @@ extension ScaffoldDtx on BuildContext {
     return scaffoldMessengerState.showSnackBar(snackBar);
   }
 
-  void removeCurrentSnackBar(
-          {SnackBarClosedReason reason = SnackBarClosedReason.remove}) =>
+  void removeCurrentSnackBar({
+    SnackBarClosedReason reason = SnackBarClosedReason.remove,
+  }) =>
       scaffoldMessengerState.removeCurrentSnackBar(reason: reason);
 
-  void hideCurrentSnackBar(
-          {SnackBarClosedReason reason = SnackBarClosedReason.hide}) =>
+  void hideCurrentSnackBar({
+    SnackBarClosedReason reason = SnackBarClosedReason.hide,
+  }) =>
       scaffoldMessengerState.hideCurrentSnackBar(reason: reason);
 
   void openDrawer() => scaffoldState.openDrawer();
