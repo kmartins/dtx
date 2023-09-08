@@ -16,10 +16,9 @@ on:
 
 jobs:
   build:
-    uses: kmartins/workflows/.github/workflows/flutter_package.yaml@flutter_package-v1.0.2
+    uses: kmartins/workflows/.github/workflows/flutter_package.yaml@v1
     with:
       working_directory: packages/flutter/flutter_context_dtx
-      flutter_version: 3.13.2
       format_directories: lib example
       analyze_directories: lib example
       run_tests: false
@@ -27,6 +26,6 @@ jobs:
       upload_coverage_codecov: false
 
   pana:
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/pana.yml@v1
+    uses: kmartins/workflows/.github/workflows/pana.yaml@1
     with:
       working_directory: packages/flutter/flutter_context_dtx
