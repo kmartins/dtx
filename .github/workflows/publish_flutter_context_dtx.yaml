@@ -9,7 +9,7 @@ jobs:
   publish:
     permissions:
       id-token: write
-    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
+    uses: kmartins/workflows/.github/workflows/publish_flutter_package.yaml@v1.0.0
     with:
-      working-directory: packages/flutter/flutter_context_dtx
+      working_directory: packages/flutter/flutter_context_dtx
       environment: flutter_context_dtx
