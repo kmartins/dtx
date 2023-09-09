@@ -1,3 +1,7 @@
+## [1.1.2] 
+
+- **build**: Flutter 3.13
+
 ## [1.1.1] 
 
 - **refactor**: remove the dynamic type

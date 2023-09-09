@@ -1,3 +1,8 @@
+## [1.4.1]
+
+- **build**: Flutter 3.13
+- **refactor**: Remove unused methods
+
 ## [1.4.0]
 
 - **feat**: Add new texts styles
