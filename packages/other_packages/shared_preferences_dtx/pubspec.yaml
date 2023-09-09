@@ -1,6 +1,6 @@
 name: shared_preferences_dtx
 description: A package that simplifies the access most of used properties/functions right in the package shared_preferences.
-version: 1.1.1
+version: 1.1.2
 repository: https://github.com/Zambiee/dtx/tree/main/packages/other_packages/shared_preferences_dtx
 issue_tracker: https://github.com/zambiee/dtx/issues
 homepage: https://github.com/zambiee/dtx
