@@ -13,4 +13,3 @@ jobs:
     with:
       working_directory: packages/flutter/flutter_context_dtx
       environment: flutter_context_dtx
-      pub_credentials: secrets.PUB_CREDENTIALS

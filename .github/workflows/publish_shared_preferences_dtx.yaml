@@ -13,4 +13,3 @@ jobs:
     with:
       working_directory: packages/other_packages/shared_preferences_dtx
       environment: shared_preferences_dtx
-      pub_credentials: secrets.PUB_CREDENTIALS
