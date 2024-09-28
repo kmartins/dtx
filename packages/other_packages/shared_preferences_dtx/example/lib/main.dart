@@ -11,15 +11,15 @@ class MyApp extends StatefulWidget {
   final SharedPreferences preferences;
 
   const MyApp({
-    Key? key,
+    super.key,
     required this.preferences,
-  }) : super(key: key);
+  });
 
   @override
-  _MyAppState createState() => _MyAppState();
+  MyAppState createState() => MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class MyAppState extends State<MyApp> {
   late final SharedPreferences preferences = widget.preferences;
   late ThemeMode themeMode = preferences.getOrElse(
     'theme_mode',
@@ -58,19 +58,19 @@ class MyHomePage extends StatefulWidget {
   final SharedPreferences preferences;
   final void Function() onChangeThemeMode;
   const MyHomePage({
-    Key? key,
+    super.key,
     required this.title,
     required this.preferences,
     required this.onChangeThemeMode,
-  }) : super(key: key);
+  });
 
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  MyHomePageState createState() => MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePageState extends State<MyHomePage> {
   late final SharedPreferences preferences = widget.preferences;
   late int _counter = preferences.getOrElse('count', defaultValue: 0);
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_context_dtx/flutter_context_dtx.dart';
 
 class FormPage extends StatelessWidget {
-  const FormPage({Key? key}) : super(key: key);
+  const FormPage({super.key});
 
   @override
   Widget build(BuildContext context) {
