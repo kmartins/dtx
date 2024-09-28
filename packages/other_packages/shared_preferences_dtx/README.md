@@ -125,5 +125,5 @@ preferences.getDateTime('date_time') ?? DateTime(2022, 07, 12); // utc
 
 ## 📝 License
 
-Copyright © 2021 [Zambiee](https://github.com/Zambiee).<br />
+Copyright © 2024 [Kauê Martins](https://github.com/kmartins).<br />
 This project is [MIT](https://opensource.org/licenses/MIT) licensed.
