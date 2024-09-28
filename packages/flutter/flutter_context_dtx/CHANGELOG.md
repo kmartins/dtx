@@ -1,3 +1,8 @@
+## [1.4.2]
+
+- **build**: Flutter 3.24
+- **refactor**: Remove unused methods
+
 ## [1.4.1]
 
 - **build**: Flutter 3.13
