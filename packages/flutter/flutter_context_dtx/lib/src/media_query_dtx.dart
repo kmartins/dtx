@@ -37,7 +37,7 @@ extension MediaQueryDtx on BuildContext {
 
   Brightness get platformBrightness => mediaQuery.platformBrightness;
 
-  double get textScaleFactor => mediaQuery.textScaleFactor;
+  double get textScaleFactor => mediaQuery.textScaler.scale(1);
 
   double get shortestScreenSide => screenSize.shortestSide;
 

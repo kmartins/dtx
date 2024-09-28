@@ -33,7 +33,7 @@ extension ThemeDtx on BuildContext {
 
   Color get colorSchemeSurface => colorScheme.surface;
 
-  Color get colorSchemeSurfaceVariant => colorScheme.surfaceVariant;
+  Color get colorSchemeSurfaceVariant => colorScheme.surfaceContainerHighest;
 
   Color get colorSchemeSurfaceTint => colorScheme.surfaceTint;
 
@@ -41,7 +41,7 @@ extension ThemeDtx on BuildContext {
 
   Color get colorSchemeOutline => colorScheme.outline;
 
-  Color get colorSchemeBackground => colorScheme.background;
+  Color get colorSchemeBackground => colorScheme.surface;
 
   Color get colorSchemeError => colorScheme.error;
 
@@ -49,7 +49,7 @@ extension ThemeDtx on BuildContext {
 
   Color get colorSchemeOnSecondary => colorScheme.onSecondary;
 
-  Color get colorSchemeOnBackground => colorScheme.onBackground;
+  Color get colorSchemeOnBackground => colorScheme.onSurface;
 
   Color get colorSchemeOnSurface => colorScheme.onSurface;
 
@@ -75,6 +75,10 @@ extension ThemeDtx on BuildContext {
 
   PopupMenuThemeData get popupMenuTheme => theme.popupMenuTheme;
 
+  @Deprecated(
+    'Use OverflowBar instead. '
+    'This feature was deprecated after v3.21.0-10.0.pre.',
+  )
   ButtonBarThemeData get buttonBarTheme => theme.buttonBarTheme;
 
   DividerThemeData get dividerTheme => theme.dividerTheme;
@@ -107,7 +111,7 @@ extension ThemeDtx on BuildContext {
 
   bool get isLightBrightness => theme.brightness == Brightness.light;
 
-  Color get backgroundColor => theme.colorScheme.background;
+  Color get backgroundColor => theme.colorScheme.surface;
 
   Color get primaryColor => theme.primaryColor;
 
@@ -175,7 +179,7 @@ extension ThemeDtx on BuildContext {
     'Use labelSmall instead. '
     'This feature was deprecated after Flutter v3.1.0-0.0.pre.',
   )
-  TextStyle? get overlinePrimaryTextStyle => primaryTextTheme.overline;
+  TextStyle? get overlinePrimaryTextStyle => primaryTextTheme.labelSmall;
 
   TextStyle? get displayLargeTextStyle => textTheme.displayLarge;
 
