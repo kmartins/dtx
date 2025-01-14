@@ -8,12 +8,12 @@ documentation: https://github.com/zambiee/dtx
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
-  flutter: ">=3.24.0"
+  flutter: ">=3.27.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  shared_preferences: ^2.3.2
+  shared_preferences: ^2.3.5
 
 dev_dependencies:
   flutter_test:

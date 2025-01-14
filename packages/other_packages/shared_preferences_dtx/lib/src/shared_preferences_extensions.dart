@@ -68,6 +68,7 @@ extension SharedPreferencesExt on SharedPreferences {
       'The $T type is incompatible - Use only double, int, String, bool, List<String>, '
       'Map<String, dynamic>, ThemeMode, Color or DateTime');
 
+  // ignore: deprecated_member_use
   Future<bool> setColor(String key, Color color) => setInt(key, color.value);
 
   Future<bool> setThemeMode(String key, ThemeMode themeMode) =>

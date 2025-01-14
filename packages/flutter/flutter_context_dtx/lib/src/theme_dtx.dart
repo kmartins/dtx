@@ -99,11 +99,11 @@ extension ThemeDtx on BuildContext {
 
   ListTileThemeData get listTileTheme => ListTileTheme.of(this);
 
-  CardTheme get cardTheme => theme.cardTheme;
+  CardThemeData get cardTheme => theme.cardTheme;
 
-  TabBarTheme get tabBarTheme => theme.tabBarTheme;
+  TabBarThemeData get tabBarTheme => theme.tabBarTheme;
 
-  DialogTheme get dialogTheme => theme.dialogTheme;
+  DialogThemeData get dialogTheme => theme.dialogTheme;
 
   Brightness get themeBrightness => theme.brightness;
 
