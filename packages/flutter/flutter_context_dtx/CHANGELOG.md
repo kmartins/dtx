@@ -1,3 +1,8 @@
+## [1.4.3]
+
+- **build**: Flutter 3.27
+- **refactor**: Change `CardTheme` to `CardThemeData`, `TabBarTheme` to `TabBarThemeData` and `DialogTheme` to `DialogThemeData`, because it's removed in Flutter 3.27.
+
 ## [1.4.2]
 
 - **build**: Flutter 3.24
