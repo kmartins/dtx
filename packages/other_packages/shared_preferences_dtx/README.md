@@ -7,6 +7,9 @@
 
 This extension package provides easy access to the most commonly used properties, functions, and additional convenience methods that depend on the package [shared_preferences](https://pub.dev/packages/shared_preferences).
 
+> [!NOTE]
+> Now can you use **`SharedPreferencesAsync`** and **`SharedPreferencesWithCache`** these are the new API, pay attention that `SharedPreferences` is a legacy API that will be deprecated in the future, read more [here](https://pub.dev/packages/shared_preferences#sharedpreferences-vs-sharedpreferencesasync-vs-sharedpreferenceswithcache).
+
 # Install
 
 Add it in your `pubspec.yaml`:
@@ -26,7 +29,13 @@ import 'package:shared_preferences_dtx/shared_preferences_dtx.dart';
 # Extensions
 
 ```dart
-final preferences = await SharedPreferences.getInstance();
+final preferences = await SharedPreferences.getInstance(); 
+// or
+// final preferences = SharedPreferencesAsync();
+// or 
+// final preferences = await SharedPreferencesWithCache.create(
+//        cacheOptions: const SharedPreferencesWithCacheOptions(),
+//);
 
 // set value
 await preferences.setValue('String', 'String'),
