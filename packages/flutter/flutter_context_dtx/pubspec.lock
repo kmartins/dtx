@@ -87,10 +87,10 @@ packages:
     dependency: "direct dev"
     description:
       name: lint
-      sha256: d758a5211fce7fd3f5e316f804daefecdc34c7e53559716125e6da7388ae8565
+      sha256: "68d71111816dc7c1de358281e506efe574bb5072eae4a19f8a57484bf96825f5"
       url: "https://pub.dev"
     source: hosted
-    version: "2.3.0"
+    version: "2.6.1"
   matcher:
     dependency: transitive
     description:
@@ -193,5 +193,5 @@ packages:
     source: hosted
     version: "14.3.0"
 sdks:
-  dart: ">=3.4.0 <4.0.0"
+  dart: ">=3.5.0 <4.0.0"
   flutter: ">=3.27.0"

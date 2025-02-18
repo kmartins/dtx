@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 ///
-/// Contains extensions to read and write a value in [SharedPreferences]
+/// Contains extensions to read and write a value in [SharedPreferencesWithCache]
 ///
-extension SharedPreferencesExt on SharedPreferences {
+extension SharedPreferenceWithCacheExt on SharedPreferencesWithCache {
   /// Reads a value, throwing an exception if it's not a
   /// double, int, string, bool or List<String>.
   T? getValue<T extends Object>(String key) => switch (T) {
@@ -52,7 +52,7 @@ extension SharedPreferencesExt on SharedPreferences {
 
   /// Writes a value, throwing an exception if it's not a
   /// double, int, string, bool or List<String>.
-  Future<bool> setValue<T extends Object>(String key, T value) =>
+  Future<void> setValue<T extends Object>(String key, T value) =>
       switch (value) {
         (final double value) => setDouble(key, value),
         (final int value) => setInt(key, value),
@@ -71,17 +71,17 @@ extension SharedPreferencesExt on SharedPreferences {
       'Map<String, dynamic>, ThemeMode, Color or DateTime');
 
   // ignore: deprecated_member_use
-  Future<bool> setColor(String key, Color color) => setInt(key, color.value);
+  Future<void> setColor(String key, Color color) => setInt(key, color.value);
 
-  Future<bool> setThemeMode(String key, ThemeMode themeMode) =>
+  Future<void> setThemeMode(String key, ThemeMode themeMode) =>
       setInt(key, ThemeMode.values.indexOf(themeMode));
 
-  Future<bool> setJson(String key, Map<String, dynamic> map) =>
+  Future<void> setJson(String key, Map<String, dynamic> map) =>
       setString(key, jsonEncode(map));
 
   /// Stores values as timezone independent milliseconds
   /// from the standard Unix epoch.
-  Future<bool> setDateTime(String key, DateTime dateTime) =>
+  Future<void> setDateTime(String key, DateTime dateTime) =>
       setString(key, dateTime.millisecondsSinceEpoch.toString());
 
   Color? getColor(String key) {

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shared_preferences_dtx/shared_preferences_dtx.dart';
+import 'package:shared_preferences_platform_interface/in_memory_shared_preferences_async.dart';
+import 'package:shared_preferences_platform_interface/shared_preferences_async_platform_interface.dart';
 
 class User {
   final String name;
@@ -30,15 +32,18 @@ class User {
 }
 
 void main() {
-  group('SharedPreferencesExtensions', () {
-    late SharedPreferences preferences;
+  group('SharedPreferencesWithCacheExtensions', () {
+    late SharedPreferencesWithCache preferences;
     const user = User('user', 20);
     final dateTime = DateTime.utc(2022, 07, 12, 03, 04, 05, 99);
     final differentDateTime = DateTime.utc(2021, 01, 26, 03, 04, 05, 99);
 
     setUp(() async {
-      SharedPreferences.setMockInitialValues({});
-      preferences = await SharedPreferences.getInstance();
+      SharedPreferencesAsyncPlatform.instance =
+          InMemorySharedPreferencesAsync.empty();
+      preferences = await SharedPreferencesWithCache.create(
+        cacheOptions: const SharedPreferencesWithCacheOptions(),
+      );
     });
 
     tearDown(() => preferences.clear());
@@ -244,24 +249,28 @@ void main() {
         throwsArgumentError,
       );
       expect(
-        () => preferences.getValue<SharedPreferences>('value'),
+        () => preferences.getValue<SharedPreferencesWithCache>('value'),
         throwsArgumentError,
       );
       expect(
-        () => preferences.getOrElse<SharedPreferences>(
+        () => preferences.getOrElse<SharedPreferencesWithCache>(
           'value',
           defaultValue: preferences,
         ),
         throwsArgumentError,
       );
       expect(
-        () =>
-            preferences.setValue<SharedPreferences>('preferences', preferences),
+        () => preferences.setValue<SharedPreferencesWithCache>(
+          'preferences',
+          preferences,
+        ),
         throwsArgumentError,
       );
       expect(
-        () =>
-            preferences.setValue<SharedPreferences>('preferences', preferences),
+        () => preferences.setValue<SharedPreferencesWithCache>(
+          'preferences',
+          preferences,
+        ),
         throwsArgumentError,
       );
     });
