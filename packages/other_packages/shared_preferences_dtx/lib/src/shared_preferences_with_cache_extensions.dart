@@ -1,4 +1,4 @@
-// ignore_for_file: unintended_html_in_doc_comment
+// ignore_for_file: document_ignores
 
 import 'dart:convert';
 
@@ -10,7 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 ///
 extension SharedPreferenceWithCacheExt on SharedPreferencesWithCache {
   /// Reads a value, throwing an exception if it's not a
-  /// double, int, string, bool or List<String>.
+  /// double, int, string, bool or `List<String>`.
   T? getValue<T extends Object>(String key) => switch (T) {
         const (double) => getDouble(key) as T?,
         const (int) => getInt(key) as T?,
@@ -25,7 +25,7 @@ extension SharedPreferenceWithCacheExt on SharedPreferencesWithCache {
       };
 
   /// Reads a value, throwing an exception if it's not a
-  /// double, int, string, bool or List<String>.
+  /// double, int, string, bool or `List<String>`.
   ///
   /// If the value is null, return the [defaultValue]
   T getOrElse<T extends Object>(String key, {required T defaultValue}) =>
@@ -51,7 +51,7 @@ extension SharedPreferenceWithCacheExt on SharedPreferencesWithCache {
       };
 
   /// Writes a value, throwing an exception if it's not a
-  /// double, int, string, bool or List<String>.
+  /// double, int, string, bool or `List<String>`.
   Future<void> setValue<T extends Object>(String key, T value) =>
       switch (value) {
         (final double value) => setDouble(key, value),

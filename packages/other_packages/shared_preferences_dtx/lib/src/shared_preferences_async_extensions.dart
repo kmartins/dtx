@@ -1,4 +1,4 @@
-// ignore_for_file: unintended_html_in_doc_comment
+// ignore_for_file: document_ignores
 
 import 'dart:convert';
 
@@ -10,7 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 ///
 extension SharedPreferencesAsyncExt on SharedPreferencesAsync {
   /// Reads a value, throwing an exception if it's not a
-  /// double, int, string, bool or List<String>.
+  /// double, int, string, bool or  `List<String>`.
   Future<T?> getValue<T extends Object>(String key) async => switch (T) {
         const (double) => await getDouble(key) as T?,
         const (int) => await getInt(key) as T?,
@@ -25,7 +25,7 @@ extension SharedPreferencesAsyncExt on SharedPreferencesAsync {
       };
 
   /// Reads a value, throwing an exception if it's not a
-  /// double, int, string, bool or List<String>.
+  /// double, int, string, bool or `List<String>`.
   ///
   /// If the value is null, return the [defaultValue]
   Future<T> getOrElse<T extends Object>(
@@ -59,7 +59,7 @@ extension SharedPreferencesAsyncExt on SharedPreferencesAsync {
       };
 
   /// Writes a value, throwing an exception if it's not a
-  /// double, int, string, bool or List<String>.
+  /// double, int, string, bool or `List<String>`.
   Future<void> setValue<T extends Object>(String key, T value) =>
       switch (value) {
         (final double value) => setDouble(key, value),
