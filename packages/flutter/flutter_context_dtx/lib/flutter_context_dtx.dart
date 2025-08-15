@@ -9,3 +9,4 @@ export 'src/navigator_dtx.dart';
 export 'src/overlay_dtx.dart';
 export 'src/scaffold_dtx.dart';
 export 'src/theme_dtx.dart';
+export 'src/window_size_class.dart';
