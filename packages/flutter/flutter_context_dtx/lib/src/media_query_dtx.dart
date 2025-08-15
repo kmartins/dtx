@@ -141,7 +141,7 @@ extension MediaQueryDtx on BuildContext {
   /// Tablet in landscape
   /// Foldable in landscape (unfolded)
   /// Desktop
-  @Deprecated('Use isWindowExpandedWidth or isWindowLargeWidth instead. '
+  @Deprecated('Use isWindowExpandedWidth instead. '
       'This method is deprecated in favor of a new, '
       'more precise naming convention '
       'that aligns with Material 3 window size classes.')
