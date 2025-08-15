@@ -1,3 +1,7 @@
+## [1.1.5]
+
+- **build**: Flutter 3.35
+  
 ## [1.1.4]
 
 - **build**: Flutter 3.27

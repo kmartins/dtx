@@ -95,7 +95,20 @@ class MyHomePage extends StatelessWidget {
 - `context.margin`
 - `context.columns`
 - `context.widthBody`
-
+- `context.windowSizeClass`
+- `context.windowWidthSizeClass`
+- `context.windowHeightSizeClass`
+- `context.isWindowCompactWidth`
+- `context.isWindowMediumWidth`
+- `context.isWindowExpandedWidth`
+- `context.isWindowLargeWidth`
+- `context.isWindowExtraLargeWidth`
+- `context.isWindowCompactHeight`
+- `context.isWindowMediumHeight`
+- `context.isWindowExpandedHeight`
+- `context.space`
+- `context.pane`
+  
 ## Navigator:
 
 - `context.push()`
@@ -337,5 +350,5 @@ You liked this package? Then give it a ⭐️. If you want to help then:
 
 ## 📝 License
 
-Copyright © 2024 [Kauê Martins](https://github.com/kmartins).<br />
+Copyright © 2025 [Kauê Martins](https://github.com/kmartins).<br />
 This project is [MIT](https://opensource.org/licenses/MIT) licensed.

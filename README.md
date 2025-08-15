@@ -28,7 +28,7 @@ Group of the packages that rely on `Dart's extension` to provide easy access for
 
 ## 📝 Maintainers
 
-[Zambiee](https://github.com/Zambiee)
+[Kauê Martins](https://github.com/kmartins)
 
 ## 🤝 Support
 
@@ -41,5 +41,5 @@ You liked this package? Then give it a ⭐️. If you want to help then:
 
 ## 📝 License
 
-Copyright © 2021 [Zambiee](https://github.com/Zambiee).<br />
+Copyright © 2025 [Kauê Martins](https://github.com/kmartins).<br />
 This project is [MIT](https://opensource.org/licenses/MIT) licensed.

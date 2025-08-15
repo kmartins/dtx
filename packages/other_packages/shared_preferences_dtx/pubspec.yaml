@@ -1,6 +1,6 @@
 name: shared_preferences_dtx
 description: A package that simplifies the access most of used properties/functions right in the package shared_preferences.
-version: 1.1.4
+version: 1.1.5
 repository: https://github.com/Zambiee/dtx/tree/main/packages/other_packages/shared_preferences_dtx
 issue_tracker: https://github.com/zambiee/dtx/issues
 homepage: https://github.com/zambiee/dtx
@@ -8,15 +8,15 @@ documentation: https://github.com/zambiee/dtx
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
-  flutter: ">=3.27.0"
+  flutter: ">=3.35.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  shared_preferences: ^2.5.2
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  lint: ^2.6.1
+  lint: ^2.8.0
   shared_preferences_platform_interface: ^2.4.1

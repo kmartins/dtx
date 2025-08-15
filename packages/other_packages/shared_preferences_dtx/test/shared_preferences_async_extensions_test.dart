@@ -38,7 +38,7 @@ void main() {
     final dateTime = DateTime.utc(2022, 07, 12, 03, 04, 05, 99);
     final differentDateTime = DateTime.utc(2021, 01, 26, 03, 04, 05, 99);
 
-    setUp(() async {
+    setUp(() {
       SharedPreferencesAsyncPlatform.instance =
           InMemorySharedPreferencesAsync.empty();
       preferences = SharedPreferencesAsync();

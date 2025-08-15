@@ -1,3 +1,11 @@
+## [1.5.0]
+
+- **build**: Flutter 3.35
+- **feat**: Add `WindowSizeClass`, `WindowWidthSizeClass` and `WindowHeightSizeClass` to help check the window size for an adaptive layout
+- **refactor**: Deprecated `isCompactLayout` use `isWindowCompactWidth` instead
+- **refactor**: Deprecated `isMediumLayout` use `isWindowMediumWidth` instead
+- **refactor**: Deprecated `isExtendedLayout` use `isWindowExpandedWidth` instead
+  
 ## [1.4.3]
 
 - **build**: Flutter 3.27

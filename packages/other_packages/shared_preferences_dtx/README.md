@@ -134,5 +134,5 @@ preferences.getDateTime('date_time') ?? DateTime(2022, 07, 12); // utc
 
 ## 📝 License
 
-Copyright © 2024 [Kauê Martins](https://github.com/kmartins).<br />
+Copyright © 2025 [Kauê Martins](https://github.com/kmartins).<br />
 This project is [MIT](https://opensource.org/licenses/MIT) licensed.
