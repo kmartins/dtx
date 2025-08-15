@@ -19,6 +19,14 @@ extension ThemeDtx on BuildContext {
 
   Color get colorSchemeTertiary => colorScheme.tertiary;
 
+  Color get colorSchemeTertiaryFixed => colorScheme.tertiaryFixed;
+
+  Color get colorSchemePrimaryFixedDim => colorScheme.primaryFixedDim;
+
+  Color get colorSchemeSecondaryFixedDim => colorScheme.secondaryFixedDim;
+
+  Color get colorSchemeTertiaryFixedDim => colorScheme.tertiaryFixedDim;
+
   Color get colorSchemePrimaryContainer => colorScheme.primaryContainer;
 
   Color get colorSchemeSecondaryContainer => colorScheme.secondaryContainer;
@@ -41,13 +49,32 @@ extension ThemeDtx on BuildContext {
 
   Color get colorSchemeOutline => colorScheme.outline;
 
+  Color get colorSchemeOutlineVariant => colorScheme.outlineVariant;
+
   Color get colorSchemeBackground => colorScheme.surface;
 
   Color get colorSchemeError => colorScheme.error;
 
   Color get colorSchemeOnPrimary => colorScheme.onPrimary;
 
+  Color get colorSchemeOnPrimaryFixed => colorScheme.onPrimaryFixed;
+
+  Color get colorSchemeOnPrimaryFixedVariant =>
+      colorScheme.onPrimaryFixedVariant;
+
   Color get colorSchemeOnSecondary => colorScheme.onSecondary;
+
+  Color get colorSchemeOnSecondaryFixed => colorScheme.onSecondaryFixed;
+
+  Color get colorSchemeOnSecondaryFixedVariant =>
+      colorScheme.onSecondaryFixedVariant;
+
+  Color get colorSchemeOnTertiary => colorScheme.onTertiary;
+
+  Color get colorSchemeOnTertiaryFixed => colorScheme.onTertiaryFixed;
+
+  Color get colorSchemeOnTertiaryFixedVariant =>
+      colorScheme.onTertiaryFixedVariant;
 
   Color get colorSchemeOnBackground => colorScheme.onSurface;
 
@@ -67,9 +94,21 @@ extension ThemeDtx on BuildContext {
 
   Color get colorSchemeOnSurfaceVariant => colorScheme.onSurfaceVariant;
 
+  Color get colorSchemeSurfaceContainerHigh => colorScheme.surfaceContainerHigh;
+
+  Color get colorSchemeSurfaceContainerHighest =>
+      colorScheme.surfaceContainerHighest;
+
+  Color get colorSchemeSurfaceContainerLow => colorScheme.surfaceContainerLow;
+
+  Color get colorSchemeSurfaceContainerLowest =>
+      colorScheme.surfaceContainerLowest;
+
+  Color get colorSchemeSurfaceDim => colorScheme.surfaceDim;
+
   Brightness get colorSchemeBrightness => colorScheme.brightness;
 
-  BottomAppBarTheme get bottomAppBarTheme => theme.bottomAppBarTheme;
+  BottomAppBarThemeData get bottomAppBarTheme => theme.bottomAppBarTheme;
 
   BottomSheetThemeData get bottomSheetTheme => theme.bottomSheetTheme;
 
@@ -123,7 +162,7 @@ extension ThemeDtx on BuildContext {
 
   Color get disabledColor => theme.disabledColor;
 
-  AppBarTheme get appBarTheme => theme.appBarTheme;
+  AppBarThemeData get appBarTheme => theme.appBarTheme;
 
   TextStyle? get headline1TextStyle => textTheme.displayLarge;
 

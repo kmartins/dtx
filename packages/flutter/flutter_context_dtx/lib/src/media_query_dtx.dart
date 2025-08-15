@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_context_dtx/src/window_size_class.dart';
 
 ///
 /// Contains extensions for easier access to [MediaQuery] and [MediaQueryData] using [BuildContext].
@@ -9,13 +10,13 @@ import 'package:flutter/material.dart';
 extension MediaQueryDtx on BuildContext {
   MediaQueryData get mediaQuery => MediaQuery.of(this);
 
-  Size get screenSize => mediaQuery.size;
+  Size get screenSize => MediaQuery.sizeOf(this);
 
-  EdgeInsets get screenPadding => mediaQuery.padding;
+  EdgeInsets get screenPadding => MediaQuery.paddingOf(this);
 
-  EdgeInsets get viewPadding => mediaQuery.viewPadding;
+  EdgeInsets get viewPadding => MediaQuery.viewPaddingOf(this);
 
-  EdgeInsets get viewInsets => mediaQuery.viewInsets;
+  EdgeInsets get viewInsets => MediaQuery.viewInsetsOf(this);
 
   double get screenWidth => screenSize.width;
 
@@ -25,19 +26,21 @@ extension MediaQueryDtx on BuildContext {
 
   double get bottomBarHeight => screenPadding.bottom;
 
-  Orientation get orientation => mediaQuery.orientation;
+  Orientation get orientation => MediaQuery.orientationOf(this);
 
   bool get isLandscape => orientation == Orientation.landscape;
 
   bool get isPortrait => orientation == Orientation.portrait;
 
-  bool get alwaysUse24HourFormat => mediaQuery.alwaysUse24HourFormat;
+  bool get alwaysUse24HourFormat => MediaQuery.alwaysUse24HourFormatOf(this);
 
-  double get screenDensity => mediaQuery.devicePixelRatio;
+  double get screenDensity => MediaQuery.devicePixelRatioOf(this);
 
-  Brightness get platformBrightness => mediaQuery.platformBrightness;
+  Brightness get platformBrightness => MediaQuery.platformBrightnessOf(this);
 
-  double get textScaleFactor => mediaQuery.textScaler.scale(1);
+  TextScaler get textScaler => MediaQuery.textScalerOf(this);
+
+  double get textScaleFactor => textScaler.scale(1);
 
   double get shortestScreenSide => screenSize.shortestSide;
 
@@ -122,21 +125,88 @@ extension MediaQueryDtx on BuildContext {
   }
 
   /// Material Design 3 - Phone in portrait
+  @Deprecated('Use isWindowCompactWidth instead. '
+      'This method is deprecated in favor of a new, more '
+      'precise naming convention.')
   bool get isCompactLayout => screenWidth < 600;
 
   /// Material Design 3 - Phone in portrait and Tablet in
   /// portrait Foldable in portrait (unfolded)
+  @Deprecated('Use isWindowMediumWidth instead. '
+      'This method is deprecated in favor of a new, '
+      'more precise naming convention.')
   bool get isMediumLayout => screenWidth >= 600 && screenWidth < 840;
 
   /// Material 3 - Phone in landscape
   /// Tablet in landscape
   /// Foldable in landscape (unfolded)
   /// Desktop
+  @Deprecated('Use isWindowExpandedWidth or isWindowLargeWidth instead. '
+      'This method is deprecated in favor of a new, '
+      'more precise naming convention '
+      'that aligns with Material 3 window size classes.')
   bool get isExtendedLayout => screenWidth >= 840;
+
+  WindowSizeClass get windowSizeClass =>
+      WindowSizeClass.calculateFromSize(screenSize);
+
+  WindowWidthSizeClass get windowWidthSizeClass =>
+      windowSizeClass.widthSizeClass;
+
+  WindowHeightSizeClass get windowHeightSizeClass =>
+      windowSizeClass.heightSizeClass;
+
+  /// Checks if the screen width falls into the "Compact" size class.
+  /// Corresponds to a width < 600dp.
+  /// (Represents 99.96% of phones in portrait mode).
+  bool get isWindowCompactWidth =>
+      windowWidthSizeClass == WindowWidthSizeClass.compact;
+
+  /// Checks if the screen width falls into the "Medium" size class.
+  /// Corresponds to a width >= 600dp and < 840dp.
+  /// (Represents 93.73% of tablets in portrait mode).
+  bool get isWindowMediumWidth =>
+      windowWidthSizeClass == WindowWidthSizeClass.medium;
+
+  /// Checks if the screen width falls into the "Expanded" size class.
+  /// Corresponds to a width >= 840dp and < 1200dp.
+  /// (Represents 97.22% of tablets in landscape mode).
+  bool get isWindowExpandedWidth =>
+      windowWidthSizeClass == WindowWidthSizeClass.expanded;
+
+  /// Checks if the screen width falls into the "Large" size class.
+  /// Corresponds to a width >= 1200dp and < 1600dp.
+  /// (Typically used for large tablet displays).
+  bool get isWindowLargeWidth =>
+      windowWidthSizeClass == WindowWidthSizeClass.large;
+
+  /// Checks if the screen width falls into the "Extra-large" size class.
+  /// Corresponds to a width >= 1600dp.
+  /// (Typically used for desktop displays).
+  bool get isWindowExtraLargeWidth =>
+      windowWidthSizeClass == WindowWidthSizeClass.extraLarge;
+
+  /// Checks if the screen height falls into the "Compact" size class.
+  /// Corresponds to a height < 480dp.
+  /// (Represents 99.78% of phones in landscape mode).
+  bool get isWindowCompactHeight =>
+      windowHeightSizeClass == WindowHeightSizeClass.compact;
+
+  /// Checks if the screen height falls into the "Medium" size class.
+  /// Corresponds to a height >= 480dp and < 900dp.
+  /// (Represents 96.56% of tablets in landscape and 97.59% of phones in portrait).
+  bool get isWindowMediumHeight =>
+      windowHeightSizeClass == WindowHeightSizeClass.medium;
+
+  /// Checks if the screen height falls into the "Expanded" size class.
+  /// Corresponds to a height >= 900dp.
+  /// (Represents 94.25% of tablets in portrait mode).
+  bool get isWindowExpandedHeight =>
+      windowHeightSizeClass == WindowHeightSizeClass.expanded;
 
   /// Material 3
   double get space {
-    if (isCompactLayout) {
+    if (isWindowCompactWidth) {
       return 16;
     }
     return 24;
@@ -144,7 +214,7 @@ extension MediaQueryDtx on BuildContext {
 
   /// Material 3
   double get pane {
-    if (isExtendedLayout) {
+    if (windowWidthSizeClass >= WindowWidthSizeClass.expanded) {
       return 2;
     }
     return 1;
