@@ -1,3 +1,7 @@
+## [1.5.1]
+
+- **fix**: export `WindowSizeClass`, `WindowWidthSizeClass` and `WindowHeightSizeClass`.
+
 ## [1.5.0]
 
 - **build**: Flutter 3.35
